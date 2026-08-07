@@ -139,8 +139,19 @@ h2{font-family:var(--font-h);font-size:clamp(28px,4vw,38px);font-weight:700;line
 .bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-h));border-radius:99px;transition:width 1s ease}
 
 /* tech logos */
-.tech-title{font-family:var(--font-h);font-size:16px;font-weight:600;margin:44px 0 20px}
+.tech-title{font-family:var(--font-h);font-size:16px;font-weight:600;margin:44px 0 18px}
+.tech-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.tech-tab{
+  font-family:var(--font-h);font-weight:600;font-size:13.5px;
+  padding:8px 18px;border-radius:99px;cursor:pointer;
+  border:1.5px solid var(--line-l);background:#fff;color:var(--muted);
+  transition:background .2s,border-color .2s,color .2s,transform .2s;
+}
+.tech-tab:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.tech-tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.tech-tab .cnt{opacity:.7;font-weight:500;margin-left:5px;font-size:12px}
 .logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:14px}
+.logo-cell.is-hidden{display:none!important}
 .logo-cell{
   background:#fff;border:1px solid var(--line-l);border-radius:12px;
   padding:16px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:9px;
@@ -442,57 +453,66 @@ footer{background:var(--darker);color:var(--muted-d);padding:44px 0 40px;text-al
         </div>
 
         <div class="tech-title">Technologies &amp; tools</div>
-        <div class="logo-grid">
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C#</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C++</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Python</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Java</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Kotlin</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Scala</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PHP</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>R</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MATLAB</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>TypeScript</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>JavaScript</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Angular</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularmaterial/angularmaterial-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Angular Material</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>RxJS</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>React</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Next.js</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Vue.js</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>jQuery</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Bootstrap</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>HTML5</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>CSS3</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>.NET Core</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Spring Boot</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Node.js</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Laravel</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Django</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Flask</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>FastAPI</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Oracle</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" onerror="this.parentElement.style.display='none'"><span>SQL Server</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PostgreSQL</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MySQL</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MongoDB</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>SQLite</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Firebase</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Grafana</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Prometheus</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Azure</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Azure DevOps</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Google Cloud</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Docker</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Git</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>GitHub Actions</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>GitLab CI</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Postman</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Swagger</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Linux</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Bash</span></div>
-          <div class="logo-cell"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PowerShell</span></div>
+        <div class="tech-tabs" id="techTabs">
+          <button class="tech-tab active" data-cat="lang">Languages<span class="cnt">12</span></button>
+          <button class="tech-tab" data-cat="front">Front-end<span class="cnt">10</span></button>
+          <button class="tech-tab" data-cat="back">Back-end<span class="cnt">7</span></button>
+          <button class="tech-tab" data-cat="db">Databases<span class="cnt">7</span></button>
+          <button class="tech-tab" data-cat="cloud">Cloud & DevOps<span class="cnt">11</span></button>
+          <button class="tech-tab" data-cat="sys">Systems<span class="cnt">3</span></button>
+          <button class="tech-tab" data-cat="all">All<span class="cnt">50</span></button>
+        </div>
+        <div class="logo-grid" id="logoGrid">
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C#</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>C++</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Python</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Java</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Kotlin</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Scala</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PHP</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>R</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MATLAB</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>TypeScript</span></div>
+          <div class="logo-cell" data-cat="lang"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>JavaScript</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Angular</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularmaterial/angularmaterial-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Angular Material</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>RxJS</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>React</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Next.js</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Vue.js</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>jQuery</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Bootstrap</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>HTML5</span></div>
+          <div class="logo-cell is-hidden" data-cat="front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>CSS3</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>.NET Core</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Spring Boot</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Node.js</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Laravel</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Django</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Flask</span></div>
+          <div class="logo-cell is-hidden" data-cat="back"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>FastAPI</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Oracle</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" onerror="this.parentElement.style.display='none'"><span>SQL Server</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PostgreSQL</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MySQL</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>MongoDB</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>SQLite</span></div>
+          <div class="logo-cell is-hidden" data-cat="db"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Firebase</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Grafana</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Prometheus</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Azure</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Azure DevOps</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Google Cloud</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Docker</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Git</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>GitHub Actions</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>GitLab CI</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Postman</span></div>
+          <div class="logo-cell is-hidden" data-cat="cloud"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Swagger</span></div>
+          <div class="logo-cell is-hidden" data-cat="sys"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Linux</span></div>
+          <div class="logo-cell is-hidden" data-cat="sys"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>Bash</span></div>
+          <div class="logo-cell is-hidden" data-cat="sys"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="" onerror="this.parentElement.style.display='none'"><span>PowerShell</span></div>
         </div>
       </div>
     </div>
@@ -654,6 +674,18 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
 }
+
+// tech-tools category filter
+const techTabs = document.querySelectorAll('#techTabs .tech-tab');
+const techCells = document.querySelectorAll('#logoGrid .logo-cell');
+techTabs.forEach(tab => tab.addEventListener('click', () => {
+  const cat = tab.dataset.cat;
+  techTabs.forEach(t => t.classList.toggle('active', t === tab));
+  techCells.forEach(c => {
+    const show = cat === 'all' || c.dataset.cat === cat;
+    c.classList.toggle('is-hidden', !show);
+  });
+}));
 </script>
 </body>
 </html>
