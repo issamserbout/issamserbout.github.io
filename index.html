@@ -210,6 +210,14 @@ html[data-theme="light"] .tgl .moon{display:none}
 .crow .k{font-family:var(--mono);font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 .crow .v{font-size:14px;color:var(--text);word-break:break-word}
 
+  .filebox{position:relative;display:flex;align-items:center;gap:11px;background:var(--bg2);border:1px dashed var(--line2);border-radius:10px;padding:12px 14px;cursor:pointer;transition:border-color .18s}
+.filebox:hover{border-color:var(--accent)}
+.filebox input[type=file]{position:absolute;left:-9999px;width:0;height:0;opacity:0}
+.fb-ic svg{width:18px;height:18px;color:var(--dim);flex-shrink:0}
+.fb-txt{font-family:var(--mono);font-size:12.5px;color:var(--dim);word-break:break-all}
+.filebox.has-file{border-style:solid;border-color:var(--accent)}
+.filebox.has-file .fb-ic svg,.filebox.has-file .fb-txt{color:var(--text)}
+
   /* --- contact form --- */
 .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
 .contact-left .contact-rows{grid-template-columns:1fr;max-width:none;margin-top:30px}
@@ -606,6 +614,14 @@ footer{border-top:1px solid var(--line);padding:34px 0}
           <label data-i18n="f_message">Message <span class="req">*</span></label>
           <textarea name="message" required data-ph="f_message_ph" placeholder="Tell me a bit about it…"></textarea>
         </div>
+        <div class="field" style="margin-bottom:14px">
+          <label data-i18n="f_file">Attachment</label>
+          <label class="filebox" id="filebox">
+            <input type="file" name="attachment" id="cfile" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.txt,.zip">
+            <span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.4 11.05 12.25 20.2a5 5 0 0 1-7.07-7.07l9.19-9.19a3 3 0 0 1 4.24 4.24l-9.2 9.19a1 1 0 0 1-1.41-1.41l8.48-8.49" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="fb-txt" id="fbtxt" data-i18n="f_file_ph">Choose a file — PDF, image, doc… (max 10 MB)</span>
+          </label>
+        </div>
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -675,7 +691,10 @@ Object.assign(ES,{
   f_phone:"Teléfono",
   f_subject:"Asunto <span class=\"req\">*</span>",
   f_message:"Mensaje <span class=\"req\">*</span>",
+  f_file:"Adjunto",
+  f_file_ph:"Elige un archivo — PDF, imagen, doc… (máx 10 MB)",
   f_send:"Enviar mensaje"
+  
 });
 
 /* contact form: placeholders + submit */
@@ -712,6 +731,36 @@ if(cform){
     }finally{ btn.disabled=false; label.textContent=orig; }
   });
 }
+  /* attachment: validate on pick + show filename */
+(function(){
+  const MAX=10*1024*1024;                                  // 10 MB (FormSubmit limit)
+  const OK=['pdf','doc','docx','png','jpg','jpeg','txt','zip'];
+  const inp=document.getElementById('cfile'),
+        box=document.getElementById('filebox'),
+        txt=document.getElementById('fbtxt'),
+        st =document.getElementById('cstatus');
+  if(!inp) return;
+  const clear=()=>{inp.value='';box.classList.remove('has-file');txt.textContent=txt._en||txt.textContent;};
+  inp.addEventListener('change',()=>{
+    const f=inp.files[0];
+    box.classList.remove('has-file');
+    if(!f){txt.textContent=txt._en;return;}
+    const ext=(f.name.split('.').pop()||'').toLowerCase();
+    if(!OK.includes(ext)){
+      st.className='cform-status err';
+      st.textContent=(lang==='es'?'Tipo de archivo no permitido.':'File type not allowed.');
+      clear();return;
+    }
+    if(f.size>MAX){
+      st.className='cform-status err';
+      st.textContent=(lang==='es'?'El archivo supera 10 MB.':'File exceeds 10 MB.');
+      clear();return;
+    }
+    st.className='cform-status';st.textContent='';
+    box.classList.add('has-file');
+    txt.textContent=f.name+' · '+(f.size/1048576).toFixed(2)+' MB';
+  });
+})();
   
 </script>
 </body>
