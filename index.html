@@ -210,6 +210,31 @@ html[data-theme="light"] .tgl .moon{display:none}
 .crow .k{font-family:var(--mono);font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 .crow .v{font-size:14px;color:var(--text);word-break:break-word}
 
+  /* --- contact form --- */
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
+.contact-left .contact-rows{grid-template-columns:1fr;max-width:none;margin-top:30px}
+.cform-head{font-family:var(--mono);font-size:11.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.cform-head::before{content:"";width:7px;height:12px;background:var(--accent);display:inline-block}
+.cform{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-family:var(--mono);font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.field label .req{color:var(--accent);margin-left:2px}
+.field input,.field textarea{width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;color:var(--text);font-family:var(--body);font-size:14.5px;transition:border-color .18s,box-shadow .18s}
+.field textarea{min-height:118px;line-height:1.6;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--dim)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+.cform .btn{width:100%;justify-content:center;margin-top:6px}
+.cform .btn[disabled]{opacity:.6;cursor:not-allowed}
+.cform-status{font-family:var(--mono);font-size:12.5px;line-height:1.5;margin-top:12px;min-height:16px}
+.cform-status.ok{color:var(--ok)}
+.cform-status.err{color:#F5695B}
+.hp{position:absolute;left:-9999px;width:0;height:0;opacity:0}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:44px}}
+@media (max-width:560px){.cform-row{grid-template-columns:1fr}}
+
+  
+
 /* footer */
 footer{border-top:1px solid var(--line);padding:34px 0}
 .foot-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -541,15 +566,55 @@ footer{border-top:1px solid var(--line);padding:34px 0}
 </section>
 
 <section id="contact" class="contact">
-  <div class="wrap">
-    <div class="eyebrow rev" data-i18n="contact_eyebrow">contact</div>
-    <h2 class="contact-big rev" data-i18n="contact_big">Let's build something <span class="hl">reliable.</span></h2>
-    <p class="contact-sub rev" data-i18n="contact_sub">Open to backend, full-stack and database/data roles — remote or Tangier-based. If you have a project or a role in mind, my inbox is open.</p>
-    <div class="contact-rows">
-      <a class="crow rev" href="mailto:issam.serbout09@gmail.com"><span class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span><span><span class="k" data-i18n="crow_email">Email</span><br><span class="v">issam.serbout09@gmail.com</span></span></a>
-      <a class="crow rev" href="tel:+212762206438"><span class="ci"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg></span><span><span class="k" data-i18n="crow_phone">Phone</span><br><span class="v">+212 762 20 64 38</span></span></a>
-      <a class="crow rev" href="https://github.com/issamserbout" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span><span><span class="k" data-i18n="crow_github">GitHub</span><br><span class="v">github.com/issamserbout</span></span></a>
-      <a class="crow rev" href="https://www.linkedin.com/in/issam-serbout" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span><span><span class="k" data-i18n="crow_linkedin">LinkedIn</span><br><span class="v">Issam Serbout</span></span></a>
+  <div class="wrap contact-grid">
+    <div class="contact-left">
+      <div class="eyebrow rev" data-i18n="contact_eyebrow">contact</div>
+      <h2 class="contact-big rev" data-i18n="contact_big">Let's build something <span class="hl">reliable.</span></h2>
+      <p class="contact-sub rev" data-i18n="contact_sub">Open to backend, full-stack and database/data roles — remote or Tangier-based. If you have a project or a role in mind, my inbox is open.</p>
+      <div class="contact-rows">
+        <a class="crow rev" href="mailto:issam.serbout09@gmail.com"><span class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span><span><span class="k" data-i18n="crow_email">Email</span><br><span class="v">issam.serbout09@gmail.com</span></span></a>
+        <a class="crow rev" href="tel:+212762206438"><span class="ci"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg></span><span><span class="k" data-i18n="crow_phone">Phone</span><br><span class="v">+212 762 20 64 38</span></span></a>
+        <a class="crow rev" href="https://github.com/issamserbout" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span><span><span class="k" data-i18n="crow_github">GitHub</span><br><span class="v">github.com/issamserbout</span></span></a>
+        <a class="crow rev" href="https://www.linkedin.com/in/issam-serbout" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span><span><span class="k" data-i18n="crow_linkedin">LinkedIn</span><br><span class="v">Issam Serbout</span></span></a>
+      </div>
+    </div>
+
+    <div class="contact-right rev">
+      <div class="cform-head" data-i18n="f_formtitle">Send me a message</div>
+      <form class="cform" id="cform" novalidate>
+        <div class="cform-row">
+          <div class="field">
+            <label data-i18n="f_name">Full name <span class="req">*</span></label>
+            <input type="text" name="name" required data-ph="f_name_ph" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label data-i18n="f_email">Email <span class="req">*</span></label>
+            <input type="email" name="email" required data-ph="f_email_ph" placeholder="you@example.com" autocomplete="email">
+          </div>
+        </div>
+        <div class="cform-row">
+          <div class="field">
+            <label data-i18n="f_phone">Phone</label>
+            <input type="tel" name="phone" data-ph="f_phone_ph" placeholder="+212 …" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label data-i18n="f_subject">Subject <span class="req">*</span></label>
+            <input type="text" name="_subject" required data-ph="f_subject_ph" placeholder="What's this about?">
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:14px">
+          <label data-i18n="f_message">Message <span class="req">*</span></label>
+          <textarea name="message" required data-ph="f_message_ph" placeholder="Tell me a bit about it…"></textarea>
+        </div>
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-a" id="cbtn">
+          <span data-i18n="f_send">Send message</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="cform-status" id="cstatus" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -601,6 +666,53 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
 /* restore saved prefs */
 try{const st=localStorage.getItem('theme'); if(st) document.documentElement.setAttribute('data-theme',st);}catch(e){}
 try{const sl=localStorage.getItem('lang'); if(sl==='es') setLang('es');}catch(e){}
+
+
+Object.assign(ES,{
+  f_formtitle:"Envíame un mensaje",
+  f_name:"Nombre completo <span class=\"req\">*</span>",
+  f_email:"Correo <span class=\"req\">*</span>",
+  f_phone:"Teléfono",
+  f_subject:"Asunto <span class=\"req\">*</span>",
+  f_message:"Mensaje <span class=\"req\">*</span>",
+  f_send:"Enviar mensaje"
+});
+
+/* contact form: placeholders + submit */
+const PH_ES={f_name_ph:"Tu nombre",f_email_ph:"tú@ejemplo.com",f_phone_ph:"+212 …",f_subject_ph:"¿De qué se trata?",f_message_ph:"Cuéntame un poco sobre ello…"};
+const _ph=[...document.querySelectorAll('[data-ph]')];
+_ph.forEach(el=>el._enph=el.getAttribute('placeholder'));
+function applyPH(){_ph.forEach(el=>{const k=el.dataset.ph;el.placeholder=(lang==='es'&&PH_ES[k])?PH_ES[k]:el._enph;});}
+document.getElementById('langBtn').addEventListener('click',applyPH);
+applyPH();
+
+const cform=document.getElementById('cform');
+if(cform){
+  const btn=document.getElementById('cbtn'), label=btn.querySelector('span'), status=document.getElementById('cstatus');
+  cform.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(cform._honey && cform._honey.value) return;                 // bot trap
+    if(!cform.checkValidity()){ cform.reportValidity(); return; }
+    const orig=label.textContent;
+    btn.disabled=true; label.textContent=(lang==='es'?'Enviando…':'Sending…');
+    status.className='cform-status'; status.textContent='';
+    try{
+      const res=await fetch('https://formsubmit.co/ajax/issam.serbout09@gmail.com',{
+        method:'POST', headers:{'Accept':'application/json'}, body:new FormData(cform)
+      });
+      const out=await res.json();
+      if(res.ok && String(out.success)==='true'){
+        status.className='cform-status ok';
+        status.textContent=(lang==='es'?'✓ ¡Mensaje enviado! Te responderé pronto.':'✓ Message sent! I\'ll get back to you soon.');
+        cform.reset(); applyPH();
+      } else throw new Error();
+    }catch(_){
+      status.className='cform-status err';
+      status.textContent=(lang==='es'?'Algo falló. Escríbeme a issam.serbout09@gmail.com':'Something went wrong. Email me at issam.serbout09@gmail.com');
+    }finally{ btn.disabled=false; label.textContent=orig; }
+  });
+}
+  
 </script>
 </body>
 </html>
