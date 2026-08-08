@@ -589,7 +589,7 @@ footer{border-top:1px solid var(--line);padding:34px 0}
 
     <div class="contact-right rev">
       <div class="cform-head" data-i18n="f_formtitle">Send me a message</div>
-      <form class="cform" id="cform" novalidate>
+      <form class="cform" id="cform"       action="https://formsubmit.co/issam.serbout09@gmail.com"       method="POST" enctype="multipart/form-data" novalidate>
         <div class="cform-row">
           <div class="field">
             <label data-i18n="f_name">Full name <span class="req">*</span></label>
@@ -622,7 +622,7 @@ footer{border-top:1px solid var(--line);padding:34px 0}
             <span class="fb-txt" id="fbtxt" data-i18n="f_file_ph">Choose a file — PDF, image, doc… (max 10 MB)</span>
           </label>
         </div>
-        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_template" value="table">         <input type="hidden" name="_next" value="https://issamserbout.github.io/?sent=1">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-a" id="cbtn">
@@ -708,27 +708,18 @@ applyPH();
 const cform=document.getElementById('cform');
 if(cform){
   const btn=document.getElementById('cbtn'), label=btn.querySelector('span'), status=document.getElementById('cstatus');
-  cform.addEventListener('submit',async e=>{
-    e.preventDefault();
-    if(cform._honey && cform._honey.value) return;                 // bot trap
-    if(!cform.checkValidity()){ cform.reportValidity(); return; }
-    const orig=label.textContent;
+
+  if(new URLSearchParams(location.search).get('sent')==='1'){
+    status.className='cform-status ok';
+    status.textContent=(lang==='es'?'✓ ¡Mensaje enviado! Te responderé pronto.':'✓ Message sent! I\'ll get back to you soon.');
+    history.replaceState(null,'',location.pathname);
+    location.hash='#contact';
+  }
+
+  cform.addEventListener('submit',e=>{
+    if(cform._honey && cform._honey.value){ e.preventDefault(); return; }
+    if(!cform.checkValidity()){ e.preventDefault(); cform.reportValidity(); return; }
     btn.disabled=true; label.textContent=(lang==='es'?'Enviando…':'Sending…');
-    status.className='cform-status'; status.textContent='';
-    try{
-      const res=await fetch('https://formsubmit.co/ajax/issam.serbout09@gmail.com',{
-        method:'POST', headers:{'Accept':'application/json'}, body:new FormData(cform)
-      });
-      const out=await res.json();
-      if(res.ok && String(out.success)==='true'){
-        status.className='cform-status ok';
-        status.textContent=(lang==='es'?'✓ ¡Mensaje enviado! Te responderé pronto.':'✓ Message sent! I\'ll get back to you soon.');
-        cform.reset(); applyPH();
-      } else throw new Error();
-    }catch(_){
-      status.className='cform-status err';
-      status.textContent=(lang==='es'?'Algo falló. Escríbeme a issam.serbout09@gmail.com':'Something went wrong. Email me at issam.serbout09@gmail.com');
-    }finally{ btn.disabled=false; label.textContent=orig; }
   });
 }
   /* attachment: validate on pick + show filename */
