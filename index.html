@@ -827,17 +827,7 @@ if(cform){
     txt.textContent=f.name+' · '+(f.size/1048576).toFixed(2)+' MB';
   });
 })();
-  function openCert(src){
-  const m=document.getElementById('certModal');
-  document.getElementById('certModalImg').src=src;
-  m.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeCert(){
-  document.getElementById('certModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
+ 
 </script>
 </body>
 </html>
