@@ -577,34 +577,15 @@ footer{border-top:1px solid var(--line);padding:34px 0}
 <!--    Verified credentials   -->
 
   <style>
-
-    
-    .cert{position:relative;cursor:pointer;transition:transform .2s,border-color .2s}
-.cert:hover{transform:translateY(-3px);border-color:var(--acc)}
-.cert-view{position:absolute;top:14px;right:16px;font-size:12px;color:var(--acc);border:1px solid var(--acc);padding:2px 10px;border-radius:20px;opacity:0;transition:opacity .2s}
+.cert{position:relative;cursor:pointer;transition:transform .2s,border-color .2s}
+.cert:hover{transform:translateY(-3px);border-color:var(--line2)}
+.cert-view{position:absolute;top:14px;right:16px;font-size:12px;color:var(--accent);border:1px solid var(--accent);padding:2px 10px;border-radius:20px;opacity:0;transition:opacity .2s}
 .cert:hover .cert-view{opacity:1}
-.cert-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.9);align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
-.cert-modal.open{display:flex}
-.cert-modal img{max-width:95%;max-height:90vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.cert-close{position:absolute;top:20px;right:30px;color:#fff;font-size:40px;cursor:pointer;line-height:1}
-
-
-    .cert{position:relative;cursor:pointer;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s}
-.cert:hover{transform:translateY(-3px);border-color:var(--acc)}
-.cert-view{position:absolute;top:14px;right:16px;font-size:12px;color:var(--acc);border:1px solid var(--acc);padding:2px 10px;border-radius:20px;opacity:0;transition:opacity .2s}
-.cert:hover .cert-view{opacity:1}
-
-
-    .cert{position:relative;cursor:pointer;transition:transform .2s,border-color .2s}
-.cert:hover{transform:translateY(-3px);border-color:var(--acc)}
-.cert-view{position:absolute;top:14px;right:16px;font-size:12px;color:var(--acc);border:1px solid var(--acc);padding:2px 10px;border-radius:20px;opacity:0;transition:opacity .2s}
-.cert:hover .cert-view{opacity:1}
-
 .cert-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:40px 20px}
 .cert-modal.open{display:flex}
 .cert-modal iframe{width:min(900px,95vw);height:90vh;border:none;border-radius:8px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .cert-close{position:absolute;top:20px;right:30px;color:#fff;font-size:40px;cursor:pointer;line-height:1;z-index:1001}
-  </style>
+</style>
 
 
 
@@ -639,9 +620,9 @@ footer{border-top:1px solid var(--line);padding:34px 0}
 
   
 
-<div id="certModal" class="cert-modal" onclick="closeCert()">
-  <span class="cert-close">&times;</span>
-  <img id="certModalImg" src="" alt="Certificate">
+<div id="certModal" class="cert-modal" onclick="closeCert(event)">
+  <span class="cert-close" onclick="closeCert(event)">&times;</span>
+  <iframe id="certFrame" src="" title="Certificate"></iframe>
 </div>
 
 <!-- Modal -->
@@ -724,26 +705,15 @@ footer{border-top:1px solid var(--line);padding:34px 0}
 </footer>
 
 <script>
-  function openCert(src){
+function openCert(src){
   document.getElementById('certFrame').src=src;
   document.getElementById('certModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
 function closeCert(e){
-  // سدّ غير إلا كليكيتي برّا الـ iframe ولا على X
   if(e && e.target.id==='certFrame') return;
   document.getElementById('certModal').classList.remove('open');
   document.getElementById('certFrame').src='';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
-  function openCert(src){
-  document.getElementById('certModalImg').src=src;
-  document.getElementById('certModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeCert(){
-  document.getElementById('certModal').classList.remove('open');
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
