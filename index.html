@@ -182,6 +182,22 @@ form .btn[disabled]{opacity:.6;cursor:wait}
 .status{font-size:14.5px;margin-top:12px;min-height:20px}
 .status.ok{color:var(--ok)}.status.err{color:#D2453A}
 
+dialog#certDlg{border:0;padding:0;margin:auto;width:min(920px,94vw);max-height:92vh;max-height:92dvh;border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 40px 80px -20px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+dialog#certDlg[open]{display:flex;animation:dlgIn .2s ease}
+dialog#certDlg::backdrop{background:rgba(7,15,28,.72);backdrop-filter:blur(3px)}
+@keyframes dlgIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.dlg-head{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 22px;border-bottom:1px solid var(--line)}
+.dlg-head h3{font-size:16px;font-weight:700;line-height:1.3;flex:1;min-width:0}
+.dlg-head a{color:var(--accent);font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap}
+.dlg-head a:hover{text-decoration:underline}
+.dlg-head button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
+.dlg-head button:hover{border-color:var(--accent);color:var(--accent)}
+.dlg-body{overflow:auto;padding:18px;background:var(--bg);display:flex;flex-direction:column;align-items:center;gap:14px;min-height:240px}
+.dlg-body canvas{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.18);background:#fff}
+.dlg-msg{color:var(--muted);font-size:15px;margin:auto;text-align:center;max-width:40ch}
+.dlg-msg a{color:var(--accent);font-weight:600}
+@media (max-width:720px){dialog#certDlg{width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.dlg-body{padding:10px}.dlg-head{padding-top:calc(14px + env(safe-area-inset-top,0px))}}
+@media (prefers-reduced-motion:reduce){dialog#certDlg[open]{animation:none}}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer nav{display:flex;gap:18px}
@@ -287,6 +303,15 @@ footer a:hover{color:var(--accent)}
     </div></div></section>
 </main>
 
+<dialog id="certDlg" aria-labelledby="certDlgTitle">
+  <div class="dlg-head">
+    <h3 id="certDlgTitle"></h3>
+    <a id="certOpen" target="_blank" rel="noopener"></a>
+    <button type="button" id="certClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="dlg-body" id="certBody"></div>
+</dialog>
+
 <footer><div class="wrap"><span data-t="foot"></span>
   <nav><a id="fGit" target="_blank" rel="noopener">GitHub</a><a id="fIn" target="_blank" rel="noopener">LinkedIn</a><a id="fWa" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/issam__serbout/" target="_blank" rel="noopener">Instagram</a></nav>
 </div></footer>
@@ -362,6 +387,7 @@ en: {
     {name:"Oracle Cloud Infrastructure 2025 Certified Data Science Professional", date:"Issued Jul 2025", file:"cert-ds.pdf"}
   ],
   certView: "View certificate",
+  cert: {open:"Open PDF", close:"Close", loading:"Loading certificate…", error:"The certificate couldn't be displayed here. Open the PDF instead."},
   eduTitle: "Education",
   edu: [
     {yr:"2025 – 2027 (in progress)", name:"Máster Universitario en Ingeniería Informática", sc:"Universidad Pablo de Olavide, Seville, Spain"},
@@ -448,6 +474,7 @@ es: {
     {name:"Oracle Cloud Infrastructure 2025 Certified Data Science Professional", date:"Emitida en julio de 2025", file:"cert-ds.pdf"}
   ],
   certView: "Ver certificado",
+  cert: {open:"Abrir PDF", close:"Cerrar", loading:"Cargando certificado…", error:"No se pudo mostrar el certificado aquí. Abre el PDF."},
   eduTitle: "Formación",
   edu: [
     {yr:"2025 – 2027 (en curso)", name:"Máster Universitario en Ingeniería Informática", sc:"Universidad Pablo de Olavide, Sevilla, España"},
@@ -546,7 +573,7 @@ function render(){
   $('#proj').innerHTML = t.projects.map((p,i) => `<article class="pj${i===0?' big':''}"><div class="k">${esc(p.kind)}</div><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p><div class="tags">${p.tags.map(g=>`<span>${esc(g)}</span>`).join('')}</div>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${t.codeLink}</a>`:''}</article>`).join('');
   $('#stackBody').innerHTML = t.stack.map(([h,v]) => `<div><h3>${esc(h)}</h3><p>${esc(v)}</p></div>`).join('');
   const seal = '<svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 3.5 2.7 6.7 8 8 5.3-1.3 8-4.5 8-8V6l-8-4zm-1.2 12.5-2.9-2.9 1.4-1.4 1.5 1.5 3.9-3.9 1.4 1.4-5.3 5.3z"/></svg>';
-  $('#certList').innerHTML = t.certs.map(c => `<a class="cert" href="${c.file}" target="_blank" rel="noopener"><span class="seal">${seal}</span><span><h3>${esc(c.name)}</h3><span class="d">Oracle University, ${esc(c.date)}</span></span><span class="go">${t.certView}</span></a>`).join('');
+  $('#certList').innerHTML = t.certs.map(c => `<a class="cert" href="${c.file}" data-file="${c.file}" data-name="${esc(c.name)}"><span class="seal">${seal}</span><span><h3>${esc(c.name)}</h3><span class="d">Oracle University, ${esc(c.date)}</span></span><span class="go">${t.certView}</span></a>`).join('');
   $('#eduList').innerHTML = t.edu.map(e => `<div><div class="y">${esc(e.yr)}</div><h3>${esc(e.name)}</h3><p>${esc(e.sc)}</p></div>`).join('');
   $('#langList').innerHTML = t.langs.map(([a,b]) => `<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('');
   const L = t.labels;
@@ -604,6 +631,58 @@ const io = new IntersectionObserver(es => es.forEach(en => {
   if (en.isIntersecting) document.querySelectorAll('#links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#'+en.target.id));
 }), {rootMargin:'-40% 0px -55% 0px'});
 SECTIONS.forEach(([id]) => io.observe(document.getElementById(id)));
+
+/* certificate viewer: renders the PDF on the page with PDF.js */
+const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+let pdfjsReady = null, certToken = 0;
+function loadPdfJs(){
+  if (!pdfjsReady) pdfjsReady = new Promise((res, rej) => {
+    const s = document.createElement('script'); s.src = PDFJS;
+    s.onload = () => { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS.replace('pdf.min.js','pdf.worker.min.js'); res(window.pdfjsLib); };
+    s.onerror = () => { pdfjsReady = null; rej(new Error('pdf.js failed to load')); };
+    document.head.appendChild(s);
+  });
+  return pdfjsReady;
+}
+const dlg = $('#certDlg'), certBody = $('#certBody');
+async function openCert(file, name){
+  const C = D[lang].cert, token = ++certToken;
+  $('#certDlgTitle').textContent = name;
+  $('#certOpen').href = file; $('#certOpen').textContent = C.open;
+  $('#certClose').setAttribute('aria-label', C.close);
+  certBody.innerHTML = `<p class="dlg-msg">${C.loading}</p>`;
+  dlg.showModal(); document.body.style.overflow = 'hidden';
+  try {
+    const lib = await loadPdfJs();
+    const pdf = await lib.getDocument(file).promise;
+    if (token !== certToken) return;
+    certBody.innerHTML = '';
+    const width = certBody.clientWidth - 36 > 0 ? Math.min(certBody.clientWidth - 20, 880) : 600;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      if (token !== certToken) return;
+      const base = page.getViewport({scale:1});
+      const vp = page.getViewport({scale:(width / base.width) * dpr});
+      const cv = document.createElement('canvas');
+      cv.width = vp.width; cv.height = vp.height;
+      cv.setAttribute('role','img'); cv.setAttribute('aria-label', name + (pdf.numPages > 1 ? ' (' + i + '/' + pdf.numPages + ')' : ''));
+      certBody.appendChild(cv);
+      await page.render({canvasContext: cv.getContext('2d'), viewport: vp}).promise;
+    }
+  } catch (e) {
+    if (token !== certToken) return;
+    certBody.innerHTML = `<p class="dlg-msg">${C.error}<br><br><a href="${file}" target="_blank" rel="noopener">${C.open}</a></p>`;
+  }
+}
+function closeCert(){ certToken++; if (dlg.open) dlg.close(); }
+dlg.addEventListener('close', () => { document.body.style.overflow = ''; certBody.innerHTML = ''; });
+$('#certClose').addEventListener('click', closeCert);
+dlg.addEventListener('click', e => { if (e.target === dlg) closeCert(); });
+$('#certList').addEventListener('click', e => {
+  const a = e.target.closest('.cert'); if (!a || typeof dlg.showModal !== 'function') return;
+  e.preventDefault(); openCert(a.dataset.file, a.dataset.name);
+});
 
 /* form */
 const form = $('#cform'), status = $('#status'), fileIn = $('#fileIn');
