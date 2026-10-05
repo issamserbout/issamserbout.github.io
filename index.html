@@ -80,8 +80,9 @@ img{max-width:100%;display:block}
 
 /* code panel: the one bold element */
 .code{background:var(--code-bg);color:var(--code-ink);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(16,28,46,.55)}
-.groups{display:flex;border-bottom:1px solid var(--code-line)}
-.groups button{flex:1;background:none;border:0;color:var(--code-dim);font:600 14px var(--sans);padding:14px 10px;cursor:pointer;border-bottom:2px solid transparent}
+.groups{display:flex;border-bottom:1px solid var(--code-line);overflow-x:auto;scrollbar-width:none}
+.groups::-webkit-scrollbar{display:none}
+.groups button{flex:1 0 auto;white-space:nowrap;background:none;border:0;color:var(--code-dim);font:600 14px var(--sans);padding:14px 10px;cursor:pointer;border-bottom:2px solid transparent}
 .groups button[aria-selected="true"]{color:#fff;border-bottom-color:var(--tk-k)}
 .variants{display:flex;gap:6px;padding:12px 14px 0;flex-wrap:wrap}
 .variants button{background:transparent;color:var(--code-dim);border:1px solid var(--code-line);border-radius:999px;font:500 13px var(--sans);padding:5px 13px;cursor:pointer}
@@ -92,6 +93,13 @@ pre.swap{animation:swap .25s ease}
 @keyframes swap{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
 .tk-k{color:var(--tk-k)}.tk-s{color:var(--tk-s)}.tk-a{color:var(--tk-a)}.tk-c{color:var(--tk-c);font-style:italic}.tk-t{color:var(--tk-t)}
 .cap{color:var(--muted);font-size:14.5px;margin-top:14px}
+.pl{margin-top:26px}
+.pl-h{font-size:15px;font-weight:700;margin-bottom:10px}
+.pl ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.pl li button{font:600 14px var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.pl li button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.pl li button:hover:not(.on){border-color:var(--accent);color:var(--accent)}
+.pl li span{display:inline-block;font:600 14px var(--sans);color:var(--muted);background:transparent;border:1px dashed var(--line);border-radius:8px;padding:6px 12px}
 
 /* sections: sticky heading left, content right */
 .sec{padding:84px 0;border-top:1px solid var(--line)}
@@ -238,6 +246,7 @@ footer a:hover{color:var(--accent)}
           <pre><code id="codeOut"></code></pre>
         </div>
         <p class="cap" data-t="codeCaption"></p>
+        <div class="pl"><h2 class="pl-h" data-t="plTitle"></h2><ul id="plList"></ul></div>
       </div>
     </div>
   </section>
@@ -291,15 +300,16 @@ en: {
   heroTitle: "I build full-stack applications in Java, .NET and Python, and keep the databases under them fast and recoverable.",
   heroLead: "2+ years in production at DSL Maroc, Enersoft and TE Connectivity. Spring Boot and ASP.NET Core on the back end, Angular, React and Vue on the front end, Oracle and SQL Server underneath.",
   cv: "Download CV", talk: "Get in touch",
-  codeCaption: "The same endpoint, written in each stack I ship with.",
-  codeGroups: {back:"Back end", front:"Front end", data:"Database"},
+  codeCaption: "Real snippets in the stacks I work with. Pick a tab.",
+  codeGroups: {back:"Back end", front:"Front end", data:"Database", devops:"DevOps", more:"More languages"},
+  plTitle: "Programming languages I write",
   aboutTitle: "About",
   about: [
     "Computer engineer with more than two years of experience in full-stack development and database administration.",
     "I work with Java/J2EE (Spring Boot), C#/ASP.NET Core and Python on the back end, and Angular, React.js and Vue.js on the front end, over SQL Server, Oracle and PostgreSQL. I design secure REST APIs and look after the performance, high availability and recovery of production databases.",
     "I deploy with Docker and CI/CD pipelines on Azure and Google Cloud Platform. I'm also completing a Master's in Computer Engineering at Universidad Pablo de Olavide (Seville, Spain)."
   ],
-  stats: [["2+","years in production"],["2","Oracle Professional certifications"],["3","companies shipped to"],["4","languages spoken"]],
+  stats: [["2+","years in production"],["15+","programming languages"],["2","Oracle Professional certifications"],["4","spoken languages"]],
   workTitle: "Experience",
   work: [
     {when:"Feb 2025 – Present", cur:true, role:"IT Specialist — Full-Stack Developer & Database Engineer", co:"DSL MAROC SARL, Tangier",
@@ -336,12 +346,15 @@ en: {
   codeLink: "Code on GitHub",
   stackTitle: "Stack",
   stack: [
-    ["Back end", "Java, Spring Boot, Spring Security, JPA/Hibernate, C#, ASP.NET Core, Entity Framework Core, LINQ, Python, FastAPI, Django, Flask, Node.js, Laravel"],
-    ["Front end", "Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, Vue.js, TypeScript, JavaScript (ES6+), Tailwind CSS, Bootstrap, Vite"],
-    ["Databases", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase, PL/SQL, T-SQL, Flyway"],
-    ["Cloud & DevOps", "Docker, GitHub Actions, GitLab CI, Azure, Azure DevOps, Google Cloud Platform, IIS, Git"],
-    ["Monitoring & quality", "Oracle Enterprise Manager, Prometheus, Grafana, JUnit, Mockito, Swagger, Postman, Clean Architecture, Agile/Scrum"],
-    ["Systems & other", "Linux, Windows Server, Bash, PowerShell, Kotlin, Scala, C, C++, PHP, R, MATLAB"]
+    ["Programming languages", "Java, J2EE, C#, VB.NET, SQL (PL/SQL, T-SQL), Python, Kotlin, Scala, C, C++, PHP, R, MATLAB, TypeScript, JavaScript"],
+    ["Back end", "Spring Boot, Spring Security, Hibernate/JPA, REST API development, JWT, ASP.NET Core, Entity Framework Core, LINQ, Node.js, Laravel, Django, Flask, FastAPI, Flyway migrations"],
+    ["Front end", "HTML5/CSS3, JavaScript (ES6+), TypeScript, Vue.js, Tailwind CSS, responsive web design, Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, jQuery, Bootstrap, Vite"],
+    ["Databases", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase"],
+    ["Testing & quality", "JUnit, Mockito, Clean Code, Clean Architecture, Agile/Scrum"],
+    ["Monitoring", "Oracle Enterprise Manager (OEM), Grafana, Prometheus"],
+    ["Cloud & DevOps", "Microsoft Azure, Azure DevOps, Google Cloud Platform, Docker, IIS, Postman, Swagger, Git, CI/CD (GitHub Actions, GitLab CI)"],
+    ["Systems", "Unix/Linux, Windows Server, Bash, PowerShell"],
+    ["Networks & security", "OSI model, TCP/IP, routing, secure network design, GNS3"]
   ],
   certTitle: "Certifications",
   certs: [
@@ -373,15 +386,16 @@ es: {
   heroTitle: "Desarrollo aplicaciones full-stack en Java, .NET y Python, y mantengo rápidas y recuperables las bases de datos que las sostienen.",
   heroLead: "Más de 2 años en producción en DSL Maroc, Enersoft y TE Connectivity. Spring Boot y ASP.NET Core en el back-end, Angular, React y Vue en el front-end, Oracle y SQL Server por debajo.",
   cv: "Descargar CV", talk: "Contactar",
-  codeCaption: "El mismo endpoint, escrito en cada stack con el que trabajo.",
-  codeGroups: {back:"Back-end", front:"Front-end", data:"Base de datos"},
+  codeCaption: "Fragmentos reales en los stacks con los que trabajo. Elige una pestaña.",
+  codeGroups: {back:"Back-end", front:"Front-end", data:"Base de datos", devops:"DevOps", more:"Más lenguajes"},
+  plTitle: "Lenguajes de programación que uso",
   aboutTitle: "Sobre mí",
   about: [
     "Ingeniero informático con más de dos años de experiencia en desarrollo full-stack y administración de bases de datos.",
     "Trabajo con Java/J2EE (Spring Boot), C#/ASP.NET Core y Python en el back-end, y con Angular, React.js y Vue.js en el front-end, sobre SQL Server, Oracle y PostgreSQL. Diseño APIs REST seguras y me ocupo del rendimiento, la alta disponibilidad y la recuperación de bases de datos en producción.",
     "Despliego con Docker y pipelines de CI/CD en Azure y Google Cloud Platform. Además, curso el Máster en Ingeniería Informática en la Universidad Pablo de Olavide (Sevilla, España)."
   ],
-  stats: [["2+","años en producción"],["2","certificaciones Oracle Professional"],["3","empresas"],["4","idiomas"]],
+  stats: [["2+","años en producción"],["15+","lenguajes de programación"],["2","certificaciones Oracle Professional"],["4","idiomas"]],
   workTitle: "Experiencia",
   work: [
     {when:"Feb 2025 – Actualidad", cur:true, role:"Especialista IT — Desarrollador Full-Stack e Ingeniero de Bases de Datos", co:"DSL MAROC SARL, Tánger",
@@ -418,12 +432,15 @@ es: {
   codeLink: "Código en GitHub",
   stackTitle: "Stack",
   stack: [
-    ["Back-end", "Java, Spring Boot, Spring Security, JPA/Hibernate, C#, ASP.NET Core, Entity Framework Core, LINQ, Python, FastAPI, Django, Flask, Node.js, Laravel"],
-    ["Front-end", "Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, Vue.js, TypeScript, JavaScript (ES6+), Tailwind CSS, Bootstrap, Vite"],
-    ["Bases de datos", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase, PL/SQL, T-SQL, Flyway"],
-    ["Cloud y DevOps", "Docker, GitHub Actions, GitLab CI, Azure, Azure DevOps, Google Cloud Platform, IIS, Git"],
-    ["Monitorización y calidad", "Oracle Enterprise Manager, Prometheus, Grafana, JUnit, Mockito, Swagger, Postman, Clean Architecture, Agile/Scrum"],
-    ["Sistemas y otros", "Linux, Windows Server, Bash, PowerShell, Kotlin, Scala, C, C++, PHP, R, MATLAB"]
+    ["Lenguajes de programación", "Java, J2EE, C#, VB.NET, SQL (PL/SQL, T-SQL), Python, Kotlin, Scala, C, C++, PHP, R, MATLAB, TypeScript, JavaScript"],
+    ["Back-end", "Spring Boot, Spring Security, Hibernate/JPA, desarrollo de APIs REST, JWT, ASP.NET Core, Entity Framework Core, LINQ, Node.js, Laravel, Django, Flask, FastAPI, migraciones con Flyway"],
+    ["Front-end", "HTML5/CSS3, JavaScript (ES6+), TypeScript, Vue.js, Tailwind CSS, diseño web responsive, Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, jQuery, Bootstrap, Vite"],
+    ["Bases de datos", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase"],
+    ["Testing y calidad", "JUnit, Mockito, Clean Code, Clean Architecture, Agile/Scrum"],
+    ["Monitorización", "Oracle Enterprise Manager (OEM), Grafana, Prometheus"],
+    ["Cloud y DevOps", "Microsoft Azure, Azure DevOps, Google Cloud Platform, Docker, IIS, Postman, Swagger, Git, CI/CD (GitHub Actions, GitLab CI)"],
+    ["Sistemas", "Unix/Linux, Windows Server, Bash, PowerShell"],
+    ["Redes y seguridad", "Modelo OSI, TCP/IP, enrutamiento, diseño de redes seguras, GNS3"]
   ],
   certTitle: "Certificaciones",
   certs: [
@@ -456,94 +473,8 @@ const CONTACT = {
   linkedin:"https://www.linkedin.com/in/issam-serbout", cv:"Issam_Serbout_CV.pdf"
 };
 
-const SNIPPETS = {
-  back: [
-    {label:"Spring Boot", lang:"java", code:
-`@RestController
-@RequestMapping("/api/courses")
-public class CourseController {
-    private final CourseService service;
-
-    @GetMapping("/{id}")
-    @PreAuthorize("hasRole('TRAINER')")
-    public CourseDto get(@PathVariable String id) {
-        return service.findById(id);
-    }
-}`},
-    {label:"ASP.NET Core", lang:"csharp", code:
-`[ApiController]
-[Route("api/courses")]
-public class CoursesController(ICourseService service) : ControllerBase
-{
-    [HttpGet("{id}")]
-    [Authorize(Roles = "Trainer")]
-    public async Task<ActionResult<CourseDto>> Get(string id)
-        => await service.FindByIdAsync(id) is { } c ? c : NotFound();
-}`},
-    {label:"FastAPI", lang:"python", code:
-`router = APIRouter(prefix="/api/courses")
-
-@router.get("/{id}", response_model=CourseOut)
-async def get_course(id: str, user=Depends(require_role("trainer"))):
-    course = await courses.find_by_id(id)
-    if course is None:
-        raise HTTPException(status_code=404)
-    return course`}
-  ],
-  front: [
-    {label:"Angular", lang:"ts", code:
-`@Component({
-  selector: 'app-course',
-  template: \`<h2>{{ course()?.title }}</h2>\`,
-})
-export class CourseComponent {
-  private http = inject(HttpClient);
-  course = toSignal(this.http.get<Course>('/api/courses/42'));
-}`},
-    {label:"React", lang:"js", code:
-`export function Course({ id }) {
-  const [course, setCourse] = useState(null);
-
-  useEffect(() => {
-    fetch(\`/api/courses/\${id}\`).then(r => r.json()).then(setCourse);
-  }, [id]);
-
-  return <h2>{course?.title}</h2>;
-}`},
-    {label:"Vue.js", lang:"js", code:
-`<script setup>
-const props = defineProps(['id']);
-const course = ref(null);
-
-onMounted(async () => {
-  const res = await fetch(\`/api/courses/\${props.id}\`);
-  course.value = await res.json();
-});
-<\/script>
-
-<template><h2>{{ course?.title }}</h2></template>`}
-  ],
-  data: [
-    {label:"Oracle SQL", lang:"sql", code:
-`-- Who is blocking whom, right now
-SELECT s.sid,
-       s.username,
-       s.blocking_session,
-       s.event,
-       s.seconds_in_wait
-FROM   v$session s
-WHERE  s.blocking_session IS NOT NULL
-ORDER  BY s.seconds_in_wait DESC;`},
-    {label:"Flyway", lang:"sql", code:
-`-- V12__add_course_index.sql
-CREATE INDEX idx_course_trainer
-    ON course (trainer_id, start_date);
-
-ALTER TABLE enrollment
-    ADD CONSTRAINT fk_enroll_course
-    FOREIGN KEY (course_id) REFERENCES course (id);`}
-  ]
-};
+const SNIPPETS = {"back": [{"label": "Spring Boot", "lang": "java", "code": "@RestController\n@RequestMapping(\"/api/courses\")\npublic class CourseController {\n    private final CourseService service;\n\n    @GetMapping(\"/{id}\")\n    @PreAuthorize(\"hasRole('TRAINER')\")\n    public CourseDto get(@PathVariable String id) {\n        return service.findById(id);\n    }\n}"}, {"label": "ASP.NET Core", "lang": "csharp", "code": "[ApiController]\n[Route(\"api/courses\")]\npublic class CoursesController(ICourseService service) : ControllerBase\n{\n    [HttpGet(\"{id}\")]\n    [Authorize(Roles = \"Trainer\")]\n    public async Task<ActionResult<CourseDto>> Get(string id)\n        => await service.FindByIdAsync(id) is { } c ? c : NotFound();\n}"}, {"label": "FastAPI", "lang": "python", "code": "router = APIRouter(prefix=\"/api/courses\")\n\n@router.get(\"/{id}\", response_model=CourseOut)\nasync def get_course(id: str, user=Depends(require_role(\"trainer\"))):\n    course = await courses.find_by_id(id)\n    if course is None:\n        raise HTTPException(status_code=404)\n    return course"}, {"label": "Django", "lang": "python", "code": "class CourseViewSet(viewsets.ReadOnlyModelViewSet):\n    queryset = Course.objects.select_related(\"trainer\")\n    serializer_class = CourseSerializer\n    permission_classes = [IsAuthenticated, IsTrainer]\n\nrouter = DefaultRouter()\nrouter.register(\"api/courses\", CourseViewSet)"}, {"label": "Flask", "lang": "python", "code": "@bp.get(\"/api/courses/<id>\")\n@jwt_required()\ndef get_course(id):\n    course = Course.query.get_or_404(id)\n    return jsonify(course.to_dict())"}, {"label": "Node.js", "lang": "js", "code": "router.get('/api/courses/:id', auth('trainer'), async (req, res) => {\n  const course = await Course.findById(req.params.id);\n  if (!course) return res.sendStatus(404);\n  res.json(course);\n});"}, {"label": "Laravel", "lang": "php", "code": "Route::middleware('auth:sanctum')\n    ->get('/api/courses/{id}', function (string $id) {\n        return Course::with('trainer')->findOrFail($id);\n    });"}], "front": [{"label": "Angular", "lang": "ts", "code": "@Component({\n  selector: 'app-course',\n  template: `<h2>{{ course()?.title }}<\/h2>`,\n})\nexport class CourseComponent {\n  private http = inject(HttpClient);\n  course = toSignal(this.http.get<Course>('/api/courses/42'));\n}"}, {"label": "React", "lang": "js", "code": "export function Course({ id }) {\n  const [course, setCourse] = useState(null);\n\n  useEffect(() => {\n    fetch(`/api/courses/${id}`).then(r => r.json()).then(setCourse);\n  }, [id]);\n\n  return <h2>{course?.title}<\/h2>;\n}"}, {"label": "Vue.js", "lang": "js", "code": "<script setup>\nconst props = defineProps(['id']);\nconst course = ref(null);\n\nonMounted(async () => {\n  const res = await fetch(`/api/courses/${props.id}`);\n  course.value = await res.json();\n});\n<\/script>\n\n<template><h2>{{ course?.title }}<\/h2><\/template>"}, {"label": "Next.js", "lang": "js", "code": "export default async function CoursePage({ params }) {\n  const course = await fetch(`${API}/api/courses/${params.id}`, {\n    next: { revalidate: 60 },\n  }).then(r => r.json());\n\n  return <h2>{course.title}<\/h2>;\n}"}, {"label": "Tailwind CSS", "lang": "html", "code": "<article class=\"rounded-xl border p-6 shadow-sm hover:shadow-md\">\n  <h2 class=\"text-lg font-semibold\">{{ course.title }}<\/h2>\n  <p class=\"text-sm text-slate-500\">{{ course.seats }} seats left<\/p>\n  <button class=\"mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white\">\n    Enroll\n  <\/button>\n<\/article>"}, {"label": "jQuery", "lang": "js", "code": "$.getJSON(`/api/courses/${id}`, course => {\n  $('#title').text(course.title);\n  $('#seats').toggleClass('full', course.seats === 0);\n});"}], "data": [{"label": "Oracle SQL", "lang": "sql", "code": "-- Who is blocking whom, right now\nSELECT s.sid,\n       s.username,\n       s.blocking_session,\n       s.event,\n       s.seconds_in_wait\nFROM   v$session s\nWHERE  s.blocking_session IS NOT NULL\nORDER  BY s.seconds_in_wait DESC;"}, {"label": "PL/SQL", "lang": "sql", "code": "CREATE OR REPLACE PROCEDURE enroll_student (\n    p_student IN NUMBER,\n    p_course  IN NUMBER\n) AS\nBEGIN\n    INSERT INTO enrollment (student_id, course_id, enrolled_at)\n    VALUES (p_student, p_course, SYSDATE);\n    COMMIT;\nEXCEPTION\n    WHEN DUP_VAL_ON_INDEX THEN\n        RAISE_APPLICATION_ERROR(-20001, 'Already enrolled');\nEND;"}, {"label": "T-SQL", "lang": "sql", "code": "-- Slowest queries on SQL Server\nSELECT TOP (10)\n       qs.total_elapsed_time / qs.execution_count AS avg_time,\n       SUBSTRING(st.text, 1, 200)                 AS query_text\nFROM   sys.dm_exec_query_stats qs\nCROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st\nORDER  BY avg_time DESC;"}, {"label": "PostgreSQL", "lang": "sql", "code": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT c.title, count(e.*) AS students\nFROM   course c\nLEFT JOIN enrollment e ON e.course_id = c.id\nGROUP  BY c.title\nORDER  BY students DESC;"}, {"label": "MongoDB", "lang": "js", "code": "db.courses.aggregate([\n  { $match: { status: \"open\" } },\n  { $lookup: { from: \"enrollments\", localField: \"_id\",\n               foreignField: \"courseId\", as: \"students\" } },\n  { $project: { title: 1, total: { $size: \"$students\" } } }\n]);"}, {"label": "Flyway", "lang": "sql", "code": "-- V12__add_course_index.sql\nCREATE INDEX idx_course_trainer\n    ON course (trainer_id, start_date);\n\nALTER TABLE enrollment\n    ADD CONSTRAINT fk_enroll_course\n    FOREIGN KEY (course_id) REFERENCES course (id);"}], "devops": [{"label": "Docker", "lang": "docker", "code": "FROM eclipse-temurin:21-jre-alpine\nWORKDIR /app\nCOPY target/courses-api.jar app.jar\nEXPOSE 8080\nHEALTHCHECK CMD wget -qO- localhost:8080/actuator/health || exit 1\nENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]"}, {"label": "GitHub Actions", "lang": "yaml", "code": "name: build\non: [push, pull_request]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-java@v4\n        with: { distribution: temurin, java-version: 21 }\n      - run: ./mvnw -B verify"}, {"label": "GitLab CI", "lang": "yaml", "code": "stages: [test, deploy]\n\ntest:\n  stage: test\n  image: mcr.microsoft.com/dotnet/sdk:8.0\n  script:\n    - dotnet test\n\ndeploy:\n  stage: deploy\n  script: docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA\n  only: [main]"}, {"label": "Bash", "lang": "bash", "code": "#!/usr/bin/env bash\n# Nightly Oracle backup with RMAN\nexport ORACLE_SID=PROD\nrman target / <<EOF\n  BACKUP DATABASE PLUS ARCHIVELOG DELETE INPUT;\n  DELETE NOPROMPT OBSOLETE;\nEOF"}, {"label": "PowerShell", "lang": "ps", "code": "# Restart the IIS app pool if the API stops answering\n$res = Invoke-WebRequest https://api.local/health -UseBasicParsing\nif ($res.StatusCode -ne 200) {\n    Restart-WebAppPool -Name \"CoursesApi\"\n    Write-Output \"App pool restarted at $(Get-Date)\"\n}"}], "more": [{"label": "Kotlin", "lang": "kotlin", "code": "data class Course(val id: String, val title: String, val seats: Int)\n\nfun List<Course>.available(): List<Course> =\n    filter { it.seats > 0 }.sortedBy { it.title }"}, {"label": "Scala", "lang": "scala", "code": "case class Course(id: String, title: String, seats: Int)\n\nval available = courses\n  .filter(_.seats > 0)\n  .sortBy(_.title)"}, {"label": "C", "lang": "c", "code": "#include <stdio.h>\n\nint main(void) {\n    int seats[] = {12, 0, 7};\n    for (int i = 0; i < 3; i++)\n        printf(\"course %d: %d seats\\n\", i, seats[i]);\n    return 0;\n}"}, {"label": "C++", "lang": "cpp", "code": "#include <algorithm>\n#include <vector>\n\nstruct Course { std::string title; int seats; };\n\nvoid sortBySeats(std::vector<Course>& v) {\n    std::sort(v.begin(), v.end(), [](const Course& a, const Course& b) {\n        return a.seats > b.seats;\n    });\n}"}, {"label": "R", "lang": "r", "code": "library(dplyr)\n\nenrollments |>\n  group_by(course) |>\n  summarise(students = n(), avg_grade = mean(grade)) |>\n  arrange(desc(students))"}, {"label": "MATLAB", "lang": "matlab", "code": "grades = [14 16 11 18 9];\nfprintf('Mean grade: %.2f\\n', mean(grades));\nhistogram(grades, 'BinWidth', 2);\ntitle('Grade distribution');"}, {"label": "VB.NET", "lang": "vb", "code": "Public Function GetCourse(id As Integer) As Course\n    Using db As New CoursesContext()\n        Return db.Courses.Find(id)\n    End Using\nEnd Function"}, {"label": "PHP", "lang": "php", "code": "function availableCourses(array $courses): array\n{\n    return array_values(array_filter(\n        $courses,\n        fn(array $c) => $c['seats'] > 0\n    ));\n}"}]};
+const PLANGS = ["Java","C#","Python","TypeScript","JavaScript","SQL","PL/SQL","T-SQL","Kotlin","Scala","PHP","VB.NET","C","C++","R","MATLAB"];
 
 /* tiny syntax highlighter */
 function hl(code, lang){
@@ -551,23 +482,38 @@ function hl(code, lang){
   const KW = {
     java:"public|private|final|class|return|new|void|static|import",
     csharp:"public|private|class|async|await|return|is|new|string|var",
-    python:"async|def|await|if|is|None|raise|return|from|import",
+    python:"async|def|await|if|is|None|raise|return|from|import|class",
     ts:"export|class|private|const|let|return|new|import",
-    js:"export|function|const|let|return|async|await|null|new|import",
-    sql:"SELECT|FROM|WHERE|ORDER|BY|IS|NOT|NULL|DESC|CREATE|INDEX|ON|ALTER|TABLE|ADD|CONSTRAINT|FOREIGN|KEY|REFERENCES|AND|OR"
+    js:"export|default|function|const|let|return|async|await|null|new|import|if",
+    php:"function|return|array|fn|use|new",
+    sql:"SELECT|FROM|WHERE|ORDER|BY|IS|NOT|NULL|DESC|CREATE|INDEX|ON|ALTER|TABLE|ADD|CONSTRAINT|FOREIGN|KEY|REFERENCES|AND|OR|REPLACE|PROCEDURE|IN|AS|BEGIN|END|INSERT|INTO|VALUES|COMMIT|EXCEPTION|WHEN|THEN|TOP|CROSS|APPLY|LEFT|JOIN|GROUP|EXPLAIN|ANALYZE|BUFFERS|NUMBER",
+    docker:"FROM|WORKDIR|COPY|EXPOSE|HEALTHCHECK|CMD|ENTRYPOINT|RUN",
+    yaml:"",
+    bash:"export|if|then|fi|for|do|done",
+    ps:"if|else|foreach|function",
+    kotlin:"data|class|val|var|fun|return",
+    scala:"case|class|val|def",
+    c:"int|void|for|return|struct|const",
+    cpp:"int|void|for|return|struct|const",
+    r:"library|function",
+    matlab:"function|end|for|if",
+    vb:"Public|Function|As|Integer|Using|New|Return|End",
+    html:""
   }[lang] || "";
+  const hash = ["python","docker","yaml","bash","ps","r"].includes(lang);
+  const prep = ["c","cpp"].includes(lang);
   const parts = [
-    "(--[^\\n]*|//[^\\n]*|#[^\\n]*)",
-    "(\"(?:[^\"\\\\]|\\\\.)*\"|'(?:[^'\\\\]|\\\\.)*'|`(?:[^`\\\\]|\\\\.)*`)",
-    "(@\\w+|\\[\\w+(?=[\\](]))",
-    "\\b(" + KW + ")\\b",
-    "\\b([A-Z][A-Za-z0-9]+)\\b"
+    hash ? "(#[^\\n]*)" : (lang === "matlab" ? "(%[^\\n]*)" : "(--[^\\n]*|//[^\\n]*)"),
+    "(\"(?:[^\"\\\\\\n]|\\\\.)*\"|'(?:[^'\\\\\\n]|\\\\.)*'|`(?:[^`\\\\]|\\\\.)*`)",
+    prep ? "(#\\w+|@\\w+)" : (lang === "yaml" ? "(^\\s*-?\\s*[\\w-]+(?=:))" : "(@\\w+|\\[\\w+(?=[\\](]))"),
+    KW ? "\\b(" + KW + ")\\b" : "(\\$NEVER\\$)",
+    ["sql","docker","yaml","bash","html"].includes(lang) ? "(\\$NEVER2\\$)" : "\\b([A-Z][A-Za-z0-9]+)\\b"
   ];
-  if (lang !== 'python') parts[0] = "(--[^\\n]*|//[^\\n]*)";
-  if (lang === 'sql') parts[4] = "(\\$NEVER\\$)";
-  const re = new RegExp(parts.join("|"), "g");
+  if (lang === "vb") parts[0] = "('[^\\n]*)";
+  const re = new RegExp(parts.join("|"), "gm");
   let out = "", last = 0, m;
   while ((m = re.exec(code))) {
+    if (m[0] === "") { re.lastIndex++; continue; }
     out += esc(code.slice(last, m.index));
     const cls = m[1]?"c":m[2]?"s":m[3]?"a":m[4]?"k":"t";
     out += '<span class="tk-'+cls+'">'+esc(m[0])+'</span>';
@@ -611,21 +557,33 @@ function render(){
     [L.linkedin, 'issam-serbout', CONTACT.linkedin],
     [L.github, 'issamserbout', CONTACT.github]
   ].map(([k,v,h]) => `<li><a href="${h}"${h.startsWith('http')?' target="_blank" rel="noopener"':''}><span>${k}</span><span>${esc(v)}</span></a></li>`).join('');
+  $('#plList').innerHTML = PLANGS.map(n => { const hit = findSnippet(n); return hit ? `<li><button type="button" data-pl="${esc(n)}">${esc(n)}</button></li>` : `<li><span>${esc(n)}</span></li>`; }).join('');
   renderCode();
+}
+
+const ALIAS = {"Java":"Spring Boot","C#":"ASP.NET Core","Python":"FastAPI","TypeScript":"Angular","JavaScript":"React","SQL":"Oracle SQL"};
+function findSnippet(name){
+  const target = ALIAS[name] || name;
+  for (const g of Object.keys(SNIPPETS)) { const i = SNIPPETS[g].findIndex(s => s.label === target); if (i > -1) return [g, i]; }
+  return null;
 }
 
 function renderCode(){
   const t = D[lang];
   $('#groups').innerHTML = Object.keys(SNIPPETS).map(g => `<button role="tab" type="button" data-g="${g}" aria-selected="${g===group}">${t.codeGroups[g]}</button>`).join('');
+  const gsel = $('#groups [aria-selected="true"]'); const gbar = $('#groups');
+  if (gsel && (gsel.offsetLeft < gbar.scrollLeft || gsel.offsetLeft + gsel.offsetWidth > gbar.scrollLeft + gbar.clientWidth)) gbar.scrollLeft = gsel.offsetLeft - 16;
   const list = SNIPPETS[group];
   $('#variants').innerHTML = list.map((s,i) => `<button type="button" data-v="${i}" aria-pressed="${i===variant}">${s.label}</button>`).join('');
   const out = $('#codeOut'), pre = out.parentElement;
   out.innerHTML = hl(list[variant].code, list[variant].lang);
+  document.querySelectorAll('#plList [data-pl]').forEach(b => { const h = findSnippet(b.dataset.pl); const on = !!h && h[0] === group && h[1] === variant; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
   pre.classList.remove('swap'); void pre.offsetWidth; pre.classList.add('swap');
 }
 
 $('#groups').addEventListener('click', e => { const b = e.target.closest('[data-g]'); if (!b) return; group = b.dataset.g; variant = 0; renderCode(); });
 $('#variants').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; variant = +b.dataset.v; renderCode(); });
+$('#plList').addEventListener('click', e => { const b = e.target.closest('[data-pl]'); if (!b) return; const hit = findSnippet(b.dataset.pl); if (!hit) return; [group, variant] = hit; renderCode(); document.querySelector('.code').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'}); });
 $('#langBtn').addEventListener('click', () => { lang = lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('lang', lang); } catch(e) {} render(); });
 
 /* theme */
