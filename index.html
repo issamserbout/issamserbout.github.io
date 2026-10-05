@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -306,7 +307,6 @@ footer a:hover{color:var(--accent)}
 <dialog id="certDlg" aria-labelledby="certDlgTitle">
   <div class="dlg-head">
     <h3 id="certDlgTitle"></h3>
-    <a id="certOpen" target="_blank" rel="noopener"></a>
     <button type="button" id="certClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
   <div class="dlg-body" id="certBody"></div>
@@ -648,7 +648,6 @@ const dlg = $('#certDlg'), certBody = $('#certBody');
 async function openCert(file, name){
   const C = D[lang].cert, token = ++certToken;
   $('#certDlgTitle').textContent = name;
-  $('#certOpen').href = file; $('#certOpen').textContent = C.open;
   $('#certClose').setAttribute('aria-label', C.close);
   certBody.innerHTML = `<p class="dlg-msg">${C.loading}</p>`;
   dlg.showModal(); document.body.style.overflow = 'hidden';
