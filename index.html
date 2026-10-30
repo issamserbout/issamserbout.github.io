@@ -1,111 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Issam Serbout — Full-Stack Engineer (Java, .NET, Python)</title>
-<meta name="description" content="Issam Serbout, full-stack engineer in Java/Spring Boot, C#/ASP.NET Core and Python, with Angular, React and Vue. Oracle-certified database engineer. Tangier, open to remote and relocation.">
-<meta property="og:title" content="Issam Serbout — Full-Stack Engineer">
-<meta property="og:description" content="Full-stack in Java, .NET and Python. Angular, React, Vue. Oracle and SQL Server in production. Open to remote and relocation.">
-<meta property="og:type" content="website">
+<title>Issam Serbout — Full-Stack & Database Engineer</title>
+<meta name="description" content="Issam Serbout, full-stack engineer in Java/Spring Boot, C#/ASP.NET Core, PHP/Laravel and Python, with Angular, React and Vue. Oracle-certified database engineer with AI and data experience. Tangier, open to remote and relocation.">
+<meta name="author" content="Issam Serbout">
+<meta name="theme-color" content="#1F4BD8">
+<link rel="canonical" href="https://issamserbout.github.io/">
+<link rel="alternate" hreflang="en" href="https://issamserbout.github.io/?lang=en">
+<link rel="alternate" hreflang="es" href="https://issamserbout.github.io/?lang=es">
+<meta property="og:title" content="Issam Serbout — Full-Stack & Database Engineer">
+<meta property="og:description" content="Java, .NET, PHP and Python on the back end. Angular, React, Vue on the front end. Oracle, SQL Server and PostgreSQL in production. AI and data projects. Open to remote and relocation.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://issamserbout.github.io/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4BD8'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EIS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Issam Serbout","jobTitle":"Full-Stack & Database Engineer",
+ "url":"https://issamserbout.github.io/","email":"mailto:issam.serbout09@gmail.com",
+ "address":{"@type":"PostalAddress","addressLocality":"Tangier","addressCountry":"MA"},
+ "sameAs":["https://github.com/issamserbout","https://www.linkedin.com/in/issam-serbout"],
+ "knowsAbout":["Java","Spring Boot","C#","ASP.NET Core","PHP","Laravel","Python","Angular","React","Vue.js","Oracle Database","SQL Server","PostgreSQL","Docker","Machine Learning"]}
+</script>
+<script>
+/* set theme before paint to avoid a flash */
+try{const t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
 <style>
 :root{
   --bg:#EEF2F6; --surface:#F8FAFC; --ink:#101C2E; --muted:#56637A; --line:#CCD5E0;
-  --accent:#1F4BD8; --accent-ink:#FFFFFF; --ok:#12805C;
+  --accent:#1F4BD8; --accent-ink:#FFFFFF; --accent-soft:#E2E9FB; --ok:#12805C; --warn:#9A5B00;
   --code-bg:#101C2E; --code-ink:#DCE4EF; --code-dim:#7D8BA0; --code-line:#22314A;
   --tk-k:#8FB2FF; --tk-s:#F2C46D; --tk-a:#FF9C7A; --tk-c:#7D8BA0; --tk-t:#9EE6C7;
   --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --maxw:1180px;
+  --maxw:1180px; --bar:62px;
+  color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --bg:#0D1626; --surface:#122036; --ink:#E7ECF3; --muted:#97A3B6; --line:#24344F;
-    --accent:#7EA2FF; --accent-ink:#0D1626; --ok:#5FD3A6;
-    --code-bg:#070F1C; --code-line:#1C2A42;
+    --accent:#7EA2FF; --accent-ink:#0D1626; --accent-soft:#1A2B4A; --ok:#5FD3A6; --warn:#F2C46D;
+    --code-bg:#070F1C; --code-line:#1C2A42; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0D1626; --surface:#122036; --ink:#E7ECF3; --muted:#97A3B6; --line:#24344F;
-  --accent:#7EA2FF; --accent-ink:#0D1626; --ok:#5FD3A6;
-  --code-bg:#070F1C; --code-line:#1C2A42;
+  --accent:#7EA2FF; --accent-ink:#0D1626; --accent-soft:#1A2B4A; --ok:#5FD3A6; --warn:#F2C46D;
+  --code-bg:#070F1C; --code-line:#1C2A42; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 16px + env(safe-area-inset-top,0px))}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img{max-width:100%;display:block}
+button{font-family:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* top bar */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar-in{max-width:var(--maxw);margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:22px}
+.bar{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:var(--bar);display:flex;align-items:center;gap:22px}
 .me{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;white-space:nowrap}
-.me img{width:32px;height:32px;border-radius:50%;object-fit:cover}
-.links{display:flex;gap:20px;list-style:none;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.links::-webkit-scrollbar{display:none}
-.links a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;white-space:nowrap}
+.me img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:var(--line)}
+.links{display:flex;gap:20px;list-style:none;margin-left:auto}
+.links a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
 .links a:hover,.links a.on{color:var(--ink)}
+.links a.on{border-bottom-color:var(--accent)}
 .ctl{display:flex;gap:8px}
-.ctl button{font:600 13px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;height:34px;min-width:40px;padding:0 10px;cursor:pointer}
+.ctl button{font:600 13px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;height:36px;min-width:40px;padding:0 10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .ctl button:hover{border-color:var(--accent);color:var(--accent)}
-.ctl svg{width:16px;height:16px;vertical-align:-3px}
+.ctl svg{width:17px;height:17px}
+#menuBtn{display:none}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0;transition:width .1s linear}
 
 /* hero */
-.hero{padding:72px 0 88px}
+.hero{padding:68px 0 84px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:start}
-.who{display:flex;align-items:center;gap:16px;margin-bottom:30px}
-.who img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+.who{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.who img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);background:var(--line)}
 .who .n{font-size:20px;font-weight:700;line-height:1.2}
 .who .r{color:var(--muted);font-size:15px}
 .avail{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ok);font-weight:600;margin-top:4px}
-.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
-.hero h1{font-size:clamp(30px,3.9vw,48px);line-height:1.08;letter-spacing:-.025em;font-weight:800;max-width:20ch}
-.hero .lead{margin-top:22px;color:var(--muted);font-size:18px;max-width:52ch}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;padding:13px 22px;border-radius:10px;border:1.5px solid var(--ink);cursor:pointer;font-family:var(--sans)}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,currentColor 50%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(30px,3.9vw,48px);line-height:1.08;letter-spacing:-.025em;font-weight:800;max-width:21ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin-top:22px;color:var(--muted);font-size:18px;max-width:54ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;list-style:none}
+.chips li{font-size:14px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;padding:13px 22px;border-radius:10px;border:1.5px solid var(--ink);cursor:pointer;font-family:var(--sans);background:transparent;color:var(--ink)}
 .btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn.pri:hover{filter:brightness(1.08)}
-.btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--bg)}
 .btn svg{width:17px;height:17px}
+.copy{border:0;background:none;color:var(--muted);font:500 14.5px var(--sans);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:4px 0}
+.copy:hover{color:var(--accent)}
+.copy svg{width:15px;height:15px}
 
-/* code panel: the one bold element */
+/* code panel */
 .code{background:var(--code-bg);color:var(--code-ink);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(16,28,46,.55)}
+.code-top{display:flex;align-items:center;gap:7px;padding:12px 16px 0}
+.code-top i{width:11px;height:11px;border-radius:50%;background:#2B3A55}
+.code-top span{margin-left:auto;font:500 12.5px var(--mono);color:var(--code-dim)}
 .groups{display:flex;border-bottom:1px solid var(--code-line);overflow-x:auto;scrollbar-width:none}
 .groups::-webkit-scrollbar{display:none}
-.groups button{flex:1 0 auto;white-space:nowrap;background:none;border:0;color:var(--code-dim);font:600 14px var(--sans);padding:14px 10px;cursor:pointer;border-bottom:2px solid transparent}
+.groups button{flex:1 0 auto;white-space:nowrap;background:none;border:0;color:var(--code-dim);font:600 14px var(--sans);padding:13px 12px;cursor:pointer;border-bottom:2px solid transparent}
 .groups button[aria-selected="true"]{color:#fff;border-bottom-color:var(--tk-k)}
+.groups button:hover{color:#fff}
 .variants{display:flex;gap:6px;padding:12px 14px 0;flex-wrap:wrap}
 .variants button{background:transparent;color:var(--code-dim);border:1px solid var(--code-line);border-radius:999px;font:500 13px var(--sans);padding:5px 13px;cursor:pointer}
 .variants button[aria-pressed="true"]{background:var(--code-ink);color:var(--code-bg);border-color:var(--code-ink)}
 .variants button:hover:not([aria-pressed="true"]){color:#fff;border-color:var(--code-dim)}
-pre{font-family:var(--mono);font-size:13.5px;line-height:1.7;padding:18px 20px 22px;overflow-x:auto;min-height:290px;tab-size:4}
+.pre-wrap{position:relative}
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.7;padding:18px 20px 22px;overflow-x:auto;min-height:300px;tab-size:4}
 pre.swap{animation:swap .25s ease}
 @keyframes swap{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.cpy{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.06);border:1px solid var(--code-line);color:var(--code-dim);border-radius:7px;font:500 12px var(--sans);padding:4px 10px;cursor:pointer}
+.cpy:hover{color:#fff;border-color:var(--code-dim)}
 .tk-k{color:var(--tk-k)}.tk-s{color:var(--tk-s)}.tk-a{color:var(--tk-a)}.tk-c{color:var(--tk-c);font-style:italic}.tk-t{color:var(--tk-t)}
 .cap{color:var(--muted);font-size:14.5px;margin-top:14px}
-.pl{margin-top:26px}
+.pl{margin-top:24px}
 .pl-h{font-size:15px;font-weight:700;margin-bottom:10px}
 .pl ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .pl li button{font:600 14px var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
 .pl li button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .pl li button:hover:not(.on){border-color:var(--accent);color:var(--accent)}
-.pl li span{display:inline-block;font:600 14px var(--sans);color:var(--muted);background:transparent;border:1px dashed var(--line);border-radius:8px;padding:6px 12px}
 
-/* sections: sticky heading left, content right */
+/* sections */
 .sec{padding:84px 0;border-top:1px solid var(--line)}
 .sec-grid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
-.sec h2{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15;position:sticky;top:96px;align-self:start}
+.sec h2{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15;position:sticky;top:calc(var(--bar) + 34px);align-self:start}
+.sec h2 small{display:block;font:500 14px var(--mono);color:var(--accent);letter-spacing:0;margin-bottom:6px}
 .prose p{max-width:66ch;color:var(--muted);font-size:18px}
 .prose p:first-child{color:var(--ink);font-size:22px;font-weight:600;line-height:1.4;margin-bottom:14px}
 .prose p+p{margin-top:12px}
@@ -113,18 +147,28 @@ pre.swap{animation:swap .25s ease}
 .facts b{display:block;font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .facts span{display:block;color:var(--muted);font-size:15px;margin-top:8px;line-height:1.35}
 
-.job{display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding-bottom:40px}
+/* experience timeline */
+.tl{position:relative}
+.job{display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding-bottom:40px;position:relative}
 .job:last-child{padding-bottom:0}
 .job .when{color:var(--muted);font-size:15px;padding-top:4px;font-variant-numeric:tabular-nums}
 .job .when.cur{color:var(--ok);font-weight:600}
+.job .body{position:relative;padding-left:26px;border-left:1px solid var(--line)}
+.job:last-child .body{border-left-color:transparent}
+.job .body::before{content:"";position:absolute;left:-6px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--muted)}
+.job .when.cur+.body::before{border-color:var(--ok);background:var(--ok)}
 .job h3{font-size:20px;font-weight:700;line-height:1.3}
-.job .co{color:var(--accent);font-weight:600;font-size:16px;margin:4px 0 12px}
+.job .co{color:var(--accent);font-weight:600;font-size:16px;margin:4px 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.badge{font:600 12px var(--sans);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
 .job ul{list-style:none;max-width:70ch}
 .job li{color:var(--muted);padding-left:20px;position:relative;margin-bottom:8px;font-size:16.5px}
 .job li::before{content:"";position:absolute;left:2px;top:.72em;width:8px;height:2px;background:var(--line)}
+.job .tags{margin-top:12px}
 
+/* projects */
 .proj{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.pj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.pj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,transform .15s}
+.pj:hover{border-color:var(--accent);transform:translateY(-2px)}
 .pj.big{grid-column:span 2;border-left:4px solid var(--accent)}
 .pj .k{color:var(--muted);font-size:14px;font-weight:500}
 .pj h3{font-size:20px;font-weight:700;line-height:1.25}
@@ -134,10 +178,19 @@ pre.swap{animation:swap .25s ease}
 .pj a{color:var(--accent);font-weight:600;font-size:15px;text-decoration:none;align-self:flex-start}
 .pj a:hover{text-decoration:underline}
 
+/* stack */
+.filter{display:flex;gap:10px;align-items:center;margin-bottom:26px}
+.filter input{flex:1;max-width:380px;font:16px var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 13px}
+.filter input:focus{outline:none;border-color:var(--accent)}
+.filter span{color:var(--muted);font-size:14px}
 .stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}
-.stack h3{font-size:16px;font-weight:700;margin-bottom:6px}
-.stack p{color:var(--muted);font-size:16px}
+.stack h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.stack ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.stack li{font-size:14.5px;padding:3px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.stack li.hit{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.stack div.dim{opacity:.35}
 
+/* certs */
 .certs{display:grid;gap:14px}
 .cert{display:flex;align-items:center;gap:18px;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none}
 .cert:hover{border-color:var(--accent)}
@@ -148,16 +201,21 @@ pre.swap{animation:swap .25s ease}
 .cert>span:nth-child(2){min-width:0;flex:1}
 .cert .go{margin-left:auto;color:var(--accent);font-weight:600;font-size:14.5px;white-space:nowrap}
 
+/* education & languages */
 .two{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px}
 .edu div{padding-bottom:22px}
 .edu .y{color:var(--muted);font-size:14.5px;font-variant-numeric:tabular-nums}
 .edu h3{font-size:17px;font-weight:700;line-height:1.35;margin:2px 0}
 .edu p{color:var(--muted);font-size:15.5px}
-.langs h3{font-size:16px;font-weight:700;margin-bottom:12px}
-.langs dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
-.langs dt{font-weight:600}
-.langs dd{color:var(--muted)}
+.langs h3{font-size:16px;font-weight:700;margin-bottom:14px}
+.lg{margin-bottom:14px}
+.lg-top{display:flex;justify-content:space-between;gap:12px;font-size:15.5px}
+.lg-top b{font-weight:600}
+.lg-top span{color:var(--muted)}
+.meter{height:6px;border-radius:99px;background:var(--line);margin-top:6px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:99px}
 
+/* contact */
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px}
 .contact-sub{color:var(--muted);font-size:18px;max-width:46ch}
 .clist{list-style:none;margin-top:28px;display:grid;gap:4px}
@@ -169,12 +227,13 @@ form{background:var(--surface);border:1px solid var(--line);border-radius:16px;p
 form h3{font-size:18px;font-weight:700;margin-bottom:16px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.f label{font-size:14px;font-weight:600}
+.f label,.f .lbl{font-size:14px;font-weight:600}
 .f label i{color:var(--accent);font-style:normal}
 .f input,.f textarea{font:16px var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%}
 .f textarea{min-height:120px;resize:vertical}
 .f input:focus,.f textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
-.file{display:flex;align-items:center;gap:10px;border:1px dashed var(--line);border-radius:10px;padding:12px 13px;cursor:pointer;color:var(--muted);font-size:14.5px}
+.f input[aria-invalid="true"],.f textarea[aria-invalid="true"]{border-color:#D2453A}
+.file{display:flex;align-items:center;gap:10px;border:1px dashed var(--line);border-radius:10px;padding:12px 13px;cursor:pointer;color:var(--muted);font-size:14.5px;position:relative}
 .file:hover,.file.has{border-color:var(--accent);color:var(--ink)}
 .file input{position:absolute;width:1px;height:1px;opacity:0}
 .hp{position:absolute;left:-9999px}
@@ -183,84 +242,123 @@ form .btn[disabled]{opacity:.6;cursor:wait}
 .status{font-size:14.5px;margin-top:12px;min-height:20px}
 .status.ok{color:var(--ok)}.status.err{color:#D2453A}
 
-dialog#certDlg{border:0;padding:0;margin:auto;width:min(920px,94vw);max-height:92vh;max-height:92dvh;border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 40px 80px -20px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+/* certificate dialog */
+dialog#certDlg{border:0;padding:0;margin:auto;width:min(920px,94vw);max-height:92dvh;border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 40px 80px -20px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
 dialog#certDlg[open]{display:flex;animation:dlgIn .2s ease}
 dialog#certDlg::backdrop{background:rgba(7,15,28,.72);backdrop-filter:blur(3px)}
 @keyframes dlgIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
 .dlg-head{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 22px;border-bottom:1px solid var(--line)}
 .dlg-head h3{font-size:16px;font-weight:700;line-height:1.3;flex:1;min-width:0}
 .dlg-head a{color:var(--accent);font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap}
-.dlg-head a:hover{text-decoration:underline}
 .dlg-head button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
 .dlg-head button:hover{border-color:var(--accent);color:var(--accent)}
 .dlg-body{overflow:auto;padding:18px;background:var(--bg);display:flex;flex-direction:column;align-items:center;gap:14px;min-height:240px}
 .dlg-body canvas{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.18);background:#fff}
 .dlg-msg{color:var(--muted);font-size:15px;margin:auto;text-align:center;max-width:40ch}
 .dlg-msg a{color:var(--accent);font-weight:600}
-@media (max-width:720px){dialog#certDlg{width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.dlg-body{padding:10px}.dlg-head{padding-top:calc(14px + env(safe-area-inset-top,0px))}}
-@media (prefers-reduced-motion:reduce){dialog#certDlg[open]{animation:none}}
+
+/* toast & back to top */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:14.5px;font-weight:600;opacity:0;pointer-events:none;transition:.2s;z-index:120}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.top{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;z-index:40}
+.top.show{opacity:1;pointer-events:auto}
+.top:hover{border-color:var(--accent);color:var(--accent)}
+
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer nav{display:flex;gap:18px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--accent)}
 
+/* reveal on scroll (only when JS runs) */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:1060px){ .links{gap:14px} .links a{font-size:14px} }
 @media (max-width:960px){
   .hero-grid,.contact-grid,.two{grid-template-columns:minmax(0,1fr)}
   .sec-grid{grid-template-columns:minmax(0,1fr);gap:24px}
   .sec h2{position:static}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #menuBtn{display:inline-flex}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 14px;margin:0}
+  .links.open{display:flex}
+  .links a{display:block;padding:12px 0;font-size:16px;border-bottom:1px solid var(--line)}
+  .links li:last-child a{border-bottom:0}
+  .ctl{margin-left:auto}
 }
 @media (max-width:720px){
-  .links{display:none}
-  .ctl{margin-left:auto}
-  .wrap,.bar-in{padding-left:20px;padding-right:20px}
-  .hero{padding:44px 0 64px}
+  .wrap,.bar-in{padding-left:16px;padding-right:16px}
+  .hero{padding:40px 0 60px}
   .job{grid-template-columns:1fr;gap:6px}
+  .job .when{padding-left:26px}
   .proj,.stack{grid-template-columns:1fr}
   .pj.big{grid-column:auto}
   .row{grid-template-columns:1fr}
-  .sec{padding:64px 0}
+  .sec{padding:60px 0}
   pre{font-size:12.5px;min-height:0}
   .cert{flex-wrap:wrap}.cert .go{margin-left:64px}
+  .facts b{font-size:34px}
+  dialog#certDlg{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}
+  .dlg-body{padding:10px}.dlg-head{padding-top:calc(14px + env(safe-area-inset-top,0px))}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}pre.swap{animation:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+@media print{
+  .bar,.code,.pl,.cap,.cta,.copy,form,.top,.toast,.filter,footer nav{display:none!important}
+  body{background:#fff;color:#000;font-size:12px}
+  .sec{padding:18px 0;border:0}.hero{padding:0 0 10px}
+  .sec h2{position:static}.sec-grid,.hero-grid{grid-template-columns:1fr;gap:8px}
+  .js .rv{opacity:1;transform:none}
+  .pj,.cert{break-inside:avoid}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#main" data-t="skip">Skip to content</a>
 
 <header class="bar">
   <div class="bar-in">
-    <a class="me" href="#top"><img src="data:image/jpeg;base64,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" alt="">Issam Serbout</a>
-    <ul class="links" id="links"></ul>
+    <a class="me" href="#top"><img id="barPhoto" alt="" width="32" height="32">Issam Serbout</a>
+    <nav aria-label="Main"><ul class="links" id="links"></ul></nav>
     <div class="ctl">
       <button id="langBtn" type="button">ES</button>
       <button id="themeBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
+      <button id="menuBtn" type="button" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
+  <div class="prog" id="prog"></div>
 </header>
 
-<main id="top">
-  <section class="hero">
+<main id="main">
+  <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
         <div class="who">
-          <!-- Replace with a higher-resolution photo if you have one -->
-          <img src="data:image/jpeg;base64,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" alt="Issam Serbout">
+          <img id="heroPhoto" src="data:image/jpeg;base64,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" alt="Issam Serbout" width="80" height="80">
           <div><div class="n">Issam Serbout</div><div class="r" data-t="role"></div><div class="avail" data-t="avail"></div></div>
         </div>
-        <h1 data-t="heroTitle"></h1>
+        <h1 id="heroTitle"></h1>
         <p class="lead" data-t="heroLead"></p>
+        <ul class="chips" id="chips"></ul>
         <div class="cta">
           <a class="btn pri" id="cvLink" download><span data-t="cv"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg></a>
           <a class="btn ghost" href="#contact" data-t="talk"></a>
         </div>
+        <button class="copy" id="copyMail" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>issam.serbout09@gmail.com</span></button>
       </div>
       <div>
         <div class="code">
+          <div class="code-top" aria-hidden="true"><i></i><i></i><i></i><span id="fileName"></span></div>
           <div class="groups" role="tablist" id="groups"></div>
           <div class="variants" id="variants"></div>
-          <pre><code id="codeOut"></code></pre>
+          <div class="pre-wrap" role="tabpanel" id="codePanel">
+            <button class="cpy" id="cpyCode" type="button" data-t="copyCode"></button>
+            <pre tabindex="0"><code id="codeOut"></code></pre>
+          </div>
         </div>
         <p class="cap" data-t="codeCaption"></p>
         <div class="pl"><h2 class="pl-h" data-t="plTitle"></h2><ul id="plList"></ul></div>
@@ -268,15 +366,16 @@ footer a:hover{color:var(--accent)}
     </div>
   </section>
 
-  <section class="sec" id="about"><div class="wrap sec-grid"><h2 data-t="aboutTitle"></h2><div><div class="prose" id="aboutBody"></div><div class="facts" id="facts"></div></div></div></section>
-  <section class="sec" id="work"><div class="wrap sec-grid"><h2 data-t="workTitle"></h2><div id="jobs"></div></div></section>
-  <section class="sec" id="projects"><div class="wrap sec-grid"><h2 data-t="projTitle"></h2><div class="proj" id="proj"></div></div></section>
-  <section class="sec" id="stack"><div class="wrap sec-grid"><h2 data-t="stackTitle"></h2><div class="stack" id="stackBody"></div></div></section>
-  <section class="sec" id="certs"><div class="wrap sec-grid"><h2 data-t="certTitle"></h2><div class="certs" id="certList"></div></div></section>
-  <section class="sec" id="edu"><div class="wrap sec-grid"><h2 data-t="eduTitle"></h2>
-    <div class="two"><div class="edu" id="eduList"></div><div class="langs"><h3 data-t="langTitle"></h3><dl id="langList"></dl></div></div></div></section>
+  <section class="sec" id="about"><div class="wrap sec-grid"><h2><small>01</small><span data-t="aboutTitle"></span></h2><div class="rv"><div class="prose" id="aboutBody"></div><div class="facts" id="facts"></div></div></div></section>
+  <section class="sec" id="work"><div class="wrap sec-grid"><h2><small>02</small><span data-t="workTitle"></span></h2><div class="tl" id="jobs"></div></div></section>
+  <section class="sec" id="projects"><div class="wrap sec-grid"><h2><small>03</small><span data-t="projTitle"></span></h2><div class="proj" id="proj"></div></div></section>
+  <section class="sec" id="stack"><div class="wrap sec-grid"><h2><small>04</small><span data-t="stackTitle"></span></h2>
+    <div><div class="filter"><label class="sr" for="skillQ" data-t="filterPh"></label><input id="skillQ" type="search" autocomplete="off"><span id="skillCount"></span></div><div class="stack" id="stackBody"></div></div></div></section>
+  <section class="sec" id="certs"><div class="wrap sec-grid"><h2><small>05</small><span data-t="certTitle"></span></h2><div class="certs rv" id="certList"></div></div></section>
+  <section class="sec" id="edu"><div class="wrap sec-grid"><h2><small>06</small><span data-t="eduTitle"></span></h2>
+    <div class="two rv"><div class="edu" id="eduList"></div><div class="langs"><h3 data-t="langTitle"></h3><div id="langList"></div></div></div></div></section>
 
-  <section class="sec" id="contact"><div class="wrap sec-grid"><h2 data-t="contactTitle"></h2>
+  <section class="sec" id="contact"><div class="wrap sec-grid"><h2><small>07</small><span data-t="contactTitle"></span></h2>
     <div class="contact-grid">
       <div><p class="contact-sub" data-t="contactSub"></p><ul class="clist" id="clist"></ul></div>
       <form id="cform" action="https://formsubmit.co/issam.serbout09@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
@@ -290,7 +389,7 @@ footer a:hover{color:var(--accent)}
           <div class="f"><label for="fs"><span data-f="subject"></span> <i>*</i></label><input id="fs" type="text" name="_subject" required data-p="subjectPh"></div>
         </div>
         <div class="f"><label for="fm"><span data-f="message"></span> <i>*</i></label><textarea id="fm" name="message" required data-p="messagePh"></textarea></div>
-        <div class="f"><span style="font-size:14px;font-weight:600" data-f="file"></span>
+        <div class="f"><span class="lbl" data-f="file"></span>
           <label class="file" id="fileBox"><input type="file" name="attachment" id="fileIn" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.txt,.zip">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21.4 11.05 12.25 20.2a5 5 0 0 1-7.07-7.07l9.19-9.19a3 3 0 0 1 4.24 4.24l-9.2 9.19a1 1 0 0 1-1.41-1.41l8.48-8.49"/></svg>
             <span id="fileTxt" data-f="filePh"></span></label></div>
@@ -299,7 +398,7 @@ footer a:hover{color:var(--accent)}
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn pri" type="submit" id="sendBtn" data-f="send"></button>
-        <div class="status" id="status" aria-live="polite"></div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
       </form>
     </div></div></section>
 </main>
@@ -307,79 +406,109 @@ footer a:hover{color:var(--accent)}
 <dialog id="certDlg" aria-labelledby="certDlgTitle">
   <div class="dlg-head">
     <h3 id="certDlgTitle"></h3>
+    <a id="certOpen" target="_blank" rel="noopener"></a>
     <button type="button" id="certClose"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
   <div class="dlg-body" id="certBody"></div>
 </dialog>
 
+<button class="top" id="toTop" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <footer><div class="wrap"><span data-t="foot"></span>
-  <nav><a id="fGit" target="_blank" rel="noopener">GitHub</a><a id="fIn" target="_blank" rel="noopener">LinkedIn</a><a id="fWa" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/issam__serbout/" target="_blank" rel="noopener">Instagram</a></nav>
+  <nav aria-label="Social"><a id="fGit" target="_blank" rel="noopener">GitHub</a><a id="fIn" target="_blank" rel="noopener">LinkedIn</a><a id="fWa" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/issam__serbout/" target="_blank" rel="noopener">Instagram</a></nav>
 </div></footer>
 
 <script>
+document.documentElement.classList.add('js');
+
+/* ===================== CONTENT ===================== */
 const D = {
 en: {
-  nav: {about:"About", work:"Experience", projects:"Projects", stack:"Stack", certs:"Certifications", edu:"Education", contact:"Contact"},
+  skip: "Skip to content",
+  nav: {about:"About", work:"Experience", projects:"Projects", stack:"Skills", certs:"Certifications", edu:"Education", contact:"Contact"},
   avail: "Open to remote & relocation",
-  role: "Full-stack engineer",
-  heroTitle: "I build full-stack applications in Java, .NET and Python, and keep the databases under them fast and recoverable.",
-  heroLead: "2+ years in production at DSL Maroc, Enersoft and TE Connectivity. Spring Boot and ASP.NET Core on the back end, Angular, React and Vue on the front end, Oracle and SQL Server underneath.",
-  cv: "Download CV", talk: "Get in touch",
-  codeCaption: "Real snippets in the stacks I work with. Pick a tab.",
-  codeGroups: {back:"Back end", front:"Front end", data:"Database", devops:"DevOps", more:"More languages"},
+  role: "Full-stack & database engineer",
+  heroTitle: "I build full-stack applications in <em>Java, .NET, PHP and Python</em>, and keep the databases under them fast and recoverable.",
+  heroLead: "2+ years shipping production apps at DLS Maroc, KESSEL, Enersoft and TE Connectivity. Spring Boot, ASP.NET Core and Laravel on the back end, Angular, React and Vue on the front end, Oracle, SQL Server and PostgreSQL underneath — plus recent AI and data work.",
+  chips: ["Spring Boot","ASP.NET Core","Laravel","Angular","React","Oracle","Docker","AI / LLMs"],
+  cv: "Download CV", talk: "Get in touch", copied: "Email copied", codeCopied: "Code copied", copyCode: "Copy",
+  codeCaption: "Short, real snippets in the stacks I work with. Pick a tab.",
+  codeGroups: {back:"Back end", front:"Front end", data:"Database", ai:"Data & AI", devops:"DevOps", more:"More"},
   plTitle: "Programming languages I write",
   aboutTitle: "About",
   about: [
-    "Computer engineer with more than two years of experience in full-stack development and database administration.",
-    "I work with Java/J2EE (Spring Boot), C#/ASP.NET Core and Python on the back end, and Angular, React.js and Vue.js on the front end, over SQL Server, Oracle and PostgreSQL. I design secure REST APIs and look after the performance, high availability and recovery of production databases.",
-    "I deploy with Docker and CI/CD pipelines on Azure and Google Cloud Platform. I'm also completing a Master's in Computer Engineering at Universidad Pablo de Olavide (Seville, Spain)."
+    "Full-stack developer with over two years of experience building web applications and running the databases behind them.",
+    "On the back end I work with C# (ASP.NET Core), Java (Spring Boot, J2EE), PHP (Laravel) and Python, depending on what the project needs; on the front end with Angular, React and Vue.js. I've designed and tuned SQL Server, Oracle and PostgreSQL databases in production, including backups, migrations and recovery.",
+    "Recently I've also worked on AI and data: an internal LLM assistant, machine-learning models for predictive maintenance and Power BI dashboards. I ship with Docker and CI/CD on Azure and Google Cloud, and I'm completing a Master's in Computer Engineering at Universidad Pablo de Olavide (Seville, Spain)."
   ],
-  stats: [["2+","years in production"],["15+","programming languages"],["2","Oracle Professional certifications"],["4","spoken languages"]],
+  stats: [["2+","years building production apps"],["5","companies in Tangier"],["2","Oracle Professional certifications"],["15+","programming languages"]],
   workTitle: "Experience",
+  internship: "Internship",
   work: [
-    {when:"Feb 2025 – Present", cur:true, role:"IT Specialist — Full-Stack Developer & Database Engineer", co:"DSL MAROC SARL, Tangier",
-     items:["Build and maintain full-stack web applications with Java, Spring Boot, JPA/Hibernate and C#/ASP.NET Core, backed by PostgreSQL, SQL Server and Oracle, with interfaces in Angular, React.js, Vue.js and Tailwind CSS.",
-            "Design and maintain secure REST APIs with JWT and role-based access control, documented with Swagger and tested with Postman.",
-            "Administer and tune production databases: SQL queries, indexing, execution plans, backups, recovery, Flyway migrations and monitoring with Oracle Enterprise Manager.",
-            "Containerize applications with Docker and automate delivery with GitHub Actions and GitLab CI; deploy on Microsoft Azure and Google Cloud Platform.",
-            "Take part in technical and architecture decisions: code reviews, unit tests and Clean Architecture."]},
-    {when:"Nov 2024 – Jan 2025", role:"Software Engineer — Full Stack", co:"Enersoft, Tangier",
-     items:["Developed and maintained an electric-vehicle charging web application used by operators across several stations.",
-            "Built microservices and secure APIs with ASP.NET Core following Clean Architecture.",
-            "Built responsive interfaces with Angular and Bootstrap; optimized MySQL, SQL Server and PostgreSQL performance.",
-            "Set up CI/CD pipelines with Docker, cutting deployment time and removing manual steps."]},
-    {when:"Feb – Aug 2024", role:"Full-Stack Developer — Internship", co:"TE Connectivity, Tangier",
-     items:["Developed an internal idea-management application to review and approve employee proposals.",
-            "Designed secure APIs and web applications with ASP.NET Core and an Angular + Bootstrap front end.",
-            "Managed and optimized SQL Server and PostgreSQL; configured IIS and packaged the app in Docker."]}
+    {when:"Feb 2025 – Present", cur:true, role:"IT Engineer — Full-Stack Developer & Database Engineer", co:"DLS MAROC SARL, Tangier",
+     items:["Meet with users to gather requirements, then design the applications and databases (BPMN, UML, Merise).",
+            "Build web apps in Java (Spring Boot, Spring Security, JPA/Hibernate, J2EE), C# (ASP.NET Core), PHP (Laravel) and Python, with Angular, React and Vue.js front ends and secured REST APIs (JWT).",
+            "Look after Oracle, PostgreSQL and SQL Server: tuning, backups, restores, migrations and monitoring with Oracle Enterprise Manager.",
+            "Build data-analysis apps and AI models in Python and R, and automate recurring reports.",
+            "Deploy with Docker and CI/CD pipelines on Azure and Google Cloud; apply OWASP practices, support users and keep documentation up to date."],
+     tags:["Spring Boot","ASP.NET Core","Laravel","Angular","Oracle","Docker"]},
+    {when:"Feb – Sep 2026", intern:true, role:"Full-Stack & Database Engineer, AI", co:"KESSEL, Tangier",
+     items:["Built web and mobile apps and REST APIs with Java/Spring Boot, J2EE, React and Flutter.",
+            "Designed and tuned PostgreSQL, SQL Server and Oracle databases: data modeling, indexing and queries.",
+            "SmartDesk AI: an internal LLM-based assistant that also analyzes business data in Python (Pandas).",
+            "Secured the apps with JWT authentication, role management and encryption of sensitive data; deployed with Docker and CI/CD."],
+     tags:["Spring Boot","React","Flutter","LLM","PostgreSQL"]},
+    {when:"Jul 2025 – Jan 2026", intern:true, role:"Data Science & Cybersecurity Engineer", co:"Chantiers et Ateliers du Nord (CAN), Tangier",
+     items:["Collected and cleaned production and maintenance data and analyzed it in Python (Pandas, NumPy) and R.",
+            "Built machine-learning models (scikit-learn) to detect anomalies and predict equipment maintenance needs; KPI dashboards in Power BI.",
+            "Analyzed system and network logs to spot suspicious behavior; ran vulnerability scans with Nmap and traffic analysis with Wireshark.",
+            "Put security practices in place: access management, backups and user awareness training."],
+     tags:["Python","scikit-learn","Power BI","Nmap","Wireshark"]},
+    {when:"Nov 2024 – Jan 2025", role:"Full-Stack Software Engineer", co:"Enersoft, Tangier",
+     items:["Developed a web and mobile app for managing EV charging stations, used across several sites.",
+            "Designed microservices and secured APIs in ASP.NET Core following Clean Architecture; responsive interfaces with Angular and Bootstrap.",
+            "Tuned MySQL, SQL Server and PostgreSQL to make the app faster; automated releases with Docker and CI/CD, cutting deployment time."],
+     tags:["ASP.NET Core","Angular","MySQL","Docker"]},
+    {when:"Feb – Aug 2024", intern:true, role:"Full-Stack Developer", co:"TE Connectivity, Tangier",
+     items:["Developed an internal app where employees submit ideas and managers review and approve them.",
+            "Designed secured APIs with ASP.NET Core and the front end with Angular and Bootstrap.",
+            "Managed and tuned SQL Server and PostgreSQL; deployed on IIS and containerized with Docker."],
+     tags:["ASP.NET Core","Angular","SQL Server","IIS"]}
   ],
   projTitle: "Projects",
   projects: [
-    {name:"Oracle Monitoring & Alerting Stack", kind:"Personal project",
-     text:"Self-hosted observability for Oracle and PostgreSQL. Custom Python exporters feed Prometheus; Grafana dashboards show wait events, tablespace growth, session activity and the most expensive SQL. Automatic alerts on blocking sessions and tablespace thresholds. Deployed with Docker.",
-     tags:["Python","Prometheus","Grafana","Oracle","PostgreSQL","Docker"], link:"https://github.com/issamserbout"},
-    {name:"Training Center Management Platform", kind:"Personal project",
-     text:"Web application for managing students, trainers, enrollments and courses. Secure REST APIs with Java, Spring Boot, JWT and MongoDB, documented with Swagger and consumed by a responsive Angular interface. Tested with Postman, containerized with Docker.",
-     tags:["Java","Spring Boot","JWT","MongoDB","Angular","Docker"], link:"https://github.com/issamserbout"},
+    {name:"AI Medical Assistant", kind:"Personal project",
+     text:"Chatbot web app: the user sends a question or a photo (a symptom, a skin lesion, a prescription) and the AI explains possible causes, rates how serious it looks and tells the user to see a doctor when needed. Answers medical questions only, keeps each user's history. Security: JWT, encrypted patient data, off-topic filtering and prompt-injection protection.",
+     tags:["Python","FastAPI","React","PostgreSQL","OpenAI / Gemini API","JWT"], link:"https://github.com/issamserbout"},
+    {name:"Bank Fraud Detection", kind:"Personal project",
+     text:"Transaction dataset cleaned and engineered with Pandas, SMOTE for class imbalance, then Logistic Regression, Random Forest and XGBoost compared on precision, recall and F1. Results and risk indicators in a Power BI dashboard.",
+     tags:["Python","Pandas","scikit-learn","XGBoost","Power BI"], link:"https://github.com/issamserbout"},
+    {name:"Network Monitoring Tool", kind:"Personal project",
+     text:"Web app that discovers devices on the network (ping, SNMP), tracks their status live and sends an email or notification when one goes down. A dashboard shows uptime and incident history.",
+     tags:["Spring Boot","Vue.js","MySQL","SNMP"], link:"https://github.com/issamserbout"},
+    {name:"SmartDesk AI", kind:"At KESSEL",
+     text:"Internal LLM-based assistant that answers staff questions and analyzes business data in Python (Pandas), with JWT authentication and role-based access.",
+     tags:["Python","LLM","Pandas","JWT"]},
     {name:"EV Charging Operations", kind:"At Enersoft",
-     text:"Web platform used daily by operators across several electric-vehicle charging stations. Clean Architecture microservices in ASP.NET Core with a responsive Angular front end.",
-     tags:["ASP.NET Core","Angular","MySQL","Docker"]},
-    {name:"Idea Management App", kind:"At TE Connectivity",
-     text:"Internal tool to collect, review and approve employee proposals end to end. Secure ASP.NET Core APIs and an Angular interface, deployed on IIS in Docker containers.",
-     tags:["ASP.NET Core","Angular","SQL Server","IIS"]}
+     text:"Web and mobile platform used daily by operators across several EV charging sites. Clean Architecture microservices in ASP.NET Core with an Angular front end.",
+     tags:["ASP.NET Core","Angular","MySQL","Docker"]}
   ],
   codeLink: "Code on GitHub",
-  stackTitle: "Stack",
+  stackTitle: "Skills",
+  filterPh: "Filter skills (e.g. Oracle, React)…",
+  matches: n => n + (n === 1 ? " match" : " matches"),
   stack: [
-    ["Programming languages", "Java, J2EE, C#, VB.NET, SQL (PL/SQL, T-SQL), Python, Kotlin, Scala, C, C++, PHP, R, MATLAB, TypeScript, JavaScript"],
-    ["Back end", "Spring Boot, Spring Security, Hibernate/JPA, REST API development, JWT, ASP.NET Core, Entity Framework Core, LINQ, Node.js, Laravel, Django, Flask, FastAPI, Flyway migrations"],
-    ["Front end", "HTML5/CSS3, JavaScript (ES6+), TypeScript, Vue.js, Tailwind CSS, responsive web design, Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, jQuery, Bootstrap, Vite"],
-    ["Databases", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase"],
-    ["Testing & quality", "JUnit, Mockito, Clean Code, Clean Architecture, Agile/Scrum"],
-    ["Monitoring", "Oracle Enterprise Manager (OEM), Grafana, Prometheus"],
-    ["Cloud & DevOps", "Microsoft Azure, Azure DevOps, Google Cloud Platform, Docker, IIS, Postman, Swagger, Git, CI/CD (GitHub Actions, GitLab CI)"],
-    ["Systems", "Unix/Linux, Windows Server, Bash, PowerShell"],
-    ["Networks & security", "OSI model, TCP/IP, routing, secure network design, GNS3"]
+    ["Programming languages", "Java, C#, VB.NET, Python, PHP, JavaScript (ES6+), TypeScript, SQL, PL/SQL, T-SQL, Kotlin, Scala, C, C++, R, MATLAB"],
+    ["Back end", "Spring Boot, Spring Security, Hibernate/JPA, J2EE, ASP.NET Core, Entity Framework Core, LINQ, Laravel, Django, Flask, FastAPI, Node.js (Express), REST APIs, JWT, Flyway"],
+    ["Front end", "Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, Vue.js, HTML5/CSS3, Bootstrap, Tailwind CSS, jQuery, Vite, Flutter, responsive design"],
+    ["Databases", "Oracle, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase, tuning, migration, backup/restore"],
+    ["Data science & AI", "Machine Learning, Deep Learning, NLP, LLMs (OpenAI / Gemini API), Prompt Engineering, Pandas, NumPy, scikit-learn, XGBoost, TensorFlow, Matplotlib, Jupyter, Power BI, web scraping"],
+    ["Cybersecurity", "OWASP Top 10, vulnerability analysis, log analysis, intrusion detection, Nmap, Wireshark, encryption, RBAC, MFA, DRP, ISO 27001"],
+    ["DevOps & cloud", "Docker, Git, GitHub Actions, GitLab CI, Azure, Azure DevOps, Google Cloud, IIS, VMware"],
+    ["Systems & networks", "Linux/Unix, Windows Server, Active Directory, Bash, PowerShell, OSI model, TCP/IP, routing, DNS, DHCP, VPN, VLAN, SNMP"],
+    ["Monitoring & support", "Grafana, Prometheus, Zabbix, Oracle Enterprise Manager (OEM), GLPI, ITIL"],
+    ["Testing & methods", "JUnit, Mockito, Postman, Swagger, Clean Code, Clean Architecture, Merise, UML, BPMN, Agile/Scrum, V-model"]
   ],
   certTitle: "Certifications",
   certs: [
@@ -390,83 +519,107 @@ en: {
   cert: {open:"Open PDF", close:"Close", loading:"Loading certificate…", error:"The certificate couldn't be displayed here. Open the PDF instead."},
   eduTitle: "Education",
   edu: [
-    {yr:"2025 – 2027 (in progress)", name:"Máster Universitario en Ingeniería Informática", sc:"Universidad Pablo de Olavide, Seville, Spain"},
-    {yr:"2022 – 2024", name:"Master Spécialisé in Computer Engineering (Ingénierie Informatique)", sc:"Faculty of Sciences, Abdelmalek Essaâdi University, Tetouan"},
+    {yr:"2025 – 2027 (in progress)", name:"Master's in Computer Engineering (Máster Universitario en Ingeniería Informática)", sc:"Universidad Pablo de Olavide, Seville, Spain"},
+    {yr:"2022 – 2024", name:"Master's in Computer Engineering", sc:"Faculty of Sciences, Abdelmalek Essaâdi University, Tetouan"},
     {yr:"2019 – 2022", name:"Bachelor's in Computer Science and Mathematics", sc:"Faculty of Sciences, Abdelmalek Essaâdi University, Tetouan"},
     {yr:"2019", name:"Baccalaureate, Physical and Chemical Sciences", sc:"Abdelmoumen Al Mouahidi High School, Tangier"}
   ],
   langTitle: "Languages",
-  langs: [["Arabic","Native"],["English","Upper-intermediate (B2)"],["Spanish","Upper-intermediate (B2)"],["French","Upper-intermediate (B2)"]],
+  langs: [["Arabic","Native",100],["French","Professional",80],["English","Professional",75],["Spanish","Intermediate",60],["Dutch","Basic (A2)",30]],
   contactTitle: "Let's talk",
-  contactSub: "Open to full-stack, back-end and database roles, remote or with relocation. If you have a role or a project in mind, write to me.",
-  form: {title:"Send a message", name:"Full name", email:"Email", phone:"Phone", subject:"Subject", message:"Message", file:"Attachment (optional)", filePh:"PDF, image or document, max 10 MB", send:"Send message", sending:"Sending…", sent:"Message sent. I'll reply soon.", badType:"This file type isn't accepted. Use PDF, DOC, DOCX, PNG, JPG, TXT or ZIP.", tooBig:"The file is over 10 MB. Choose a smaller one.",
+  contactSub: "Open to full-stack, back-end, database and data roles, remote or with relocation. If you have a role or a project in mind, write to me.",
+  form: {title:"Send a message", name:"Full name", email:"Email", phone:"Phone", subject:"Subject", message:"Message", file:"Attachment (optional)", filePh:"PDF, image or document, max 10 MB", send:"Send message", sending:"Sending…", sent:"Message sent. I'll reply soon.", invalid:"Please fill in the required fields.", badType:"This file type isn't accepted. Use PDF, DOC, DOCX, PNG, JPG, TXT or ZIP.", tooBig:"The file is over 10 MB. Choose a smaller one.",
          namePh:"Your name", emailPh:"you@example.com", subjectPh:"What is it about?", messagePh:"A few lines about the role or project"},
-  labels: {email:"Email", phone:"Phone", whatsapp:"WhatsApp", github:"GitHub", linkedin:"LinkedIn"},
-  foot: "© 2026 Issam Serbout",
-  themeLabel: "Switch theme", langLabel: "Ver en español"
+  labels: {email:"Email", phone:"Phone", whatsapp:"WhatsApp", github:"GitHub", linkedin:"LinkedIn", location:"Location"},
+  location: "Tangier, Morocco",
+  foot: "© " + new Date().getFullYear() + " Issam Serbout",
+  themeLabel: "Switch theme", langLabel: "Ver en español", menuLabel: "Menu", topLabel: "Back to top"
 },
 es: {
-  nav: {about:"Sobre mí", work:"Experiencia", projects:"Proyectos", stack:"Stack", certs:"Certificaciones", edu:"Formación", contact:"Contacto"},
+  skip: "Saltar al contenido",
+  nav: {about:"Sobre mí", work:"Experiencia", projects:"Proyectos", stack:"Habilidades", certs:"Certificaciones", edu:"Formación", contact:"Contacto"},
   avail: "Disponible en remoto y para reubicación",
-  role: "Ingeniero full-stack",
-  heroTitle: "Desarrollo aplicaciones full-stack en Java, .NET y Python, y mantengo rápidas y recuperables las bases de datos que las sostienen.",
-  heroLead: "Más de 2 años en producción en DSL Maroc, Enersoft y TE Connectivity. Spring Boot y ASP.NET Core en el back-end, Angular, React y Vue en el front-end, Oracle y SQL Server por debajo.",
-  cv: "Descargar CV", talk: "Contactar",
-  codeCaption: "Fragmentos reales en los stacks con los que trabajo. Elige una pestaña.",
-  codeGroups: {back:"Back-end", front:"Front-end", data:"Base de datos", devops:"DevOps", more:"Más lenguajes"},
+  role: "Ingeniero full-stack y de bases de datos",
+  heroTitle: "Desarrollo aplicaciones full-stack en <em>Java, .NET, PHP y Python</em>, y mantengo rápidas y recuperables las bases de datos que las sostienen.",
+  heroLead: "Más de 2 años creando aplicaciones en producción en DLS Maroc, KESSEL, Enersoft y TE Connectivity. Spring Boot, ASP.NET Core y Laravel en el back-end, Angular, React y Vue en el front-end, Oracle, SQL Server y PostgreSQL por debajo — y trabajo reciente en IA y datos.",
+  chips: ["Spring Boot","ASP.NET Core","Laravel","Angular","React","Oracle","Docker","IA / LLMs"],
+  cv: "Descargar CV", talk: "Contactar", copied: "Correo copiado", codeCopied: "Código copiado", copyCode: "Copiar",
+  codeCaption: "Fragmentos cortos y reales en los stacks con los que trabajo. Elige una pestaña.",
+  codeGroups: {back:"Back-end", front:"Front-end", data:"Base de datos", ai:"Datos e IA", devops:"DevOps", more:"Más"},
   plTitle: "Lenguajes de programación que uso",
   aboutTitle: "Sobre mí",
   about: [
-    "Ingeniero informático con más de dos años de experiencia en desarrollo full-stack y administración de bases de datos.",
-    "Trabajo con Java/J2EE (Spring Boot), C#/ASP.NET Core y Python en el back-end, y con Angular, React.js y Vue.js en el front-end, sobre SQL Server, Oracle y PostgreSQL. Diseño APIs REST seguras y me ocupo del rendimiento, la alta disponibilidad y la recuperación de bases de datos en producción.",
-    "Despliego con Docker y pipelines de CI/CD en Azure y Google Cloud Platform. Además, curso el Máster en Ingeniería Informática en la Universidad Pablo de Olavide (Sevilla, España)."
+    "Desarrollador full-stack con más de dos años de experiencia creando aplicaciones web y gestionando las bases de datos que las sostienen.",
+    "En el back-end trabajo con C# (ASP.NET Core), Java (Spring Boot, J2EE), PHP (Laravel) y Python, según lo que necesite el proyecto; en el front-end con Angular, React y Vue.js. He diseñado y optimizado bases de datos SQL Server, Oracle y PostgreSQL en producción, incluidas copias de seguridad, migraciones y recuperación.",
+    "Recientemente también he trabajado en IA y datos: un asistente interno basado en LLM, modelos de machine learning para mantenimiento predictivo y dashboards en Power BI. Despliego con Docker y CI/CD en Azure y Google Cloud, y curso el Máster en Ingeniería Informática en la Universidad Pablo de Olavide (Sevilla)."
   ],
-  stats: [["2+","años en producción"],["15+","lenguajes de programación"],["2","certificaciones Oracle Professional"],["4","idiomas"]],
+  stats: [["2+","años creando apps en producción"],["5","empresas en Tánger"],["2","certificaciones Oracle Professional"],["15+","lenguajes de programación"]],
   workTitle: "Experiencia",
+  internship: "Prácticas",
   work: [
-    {when:"Feb 2025 – Actualidad", cur:true, role:"Especialista IT — Desarrollador Full-Stack e Ingeniero de Bases de Datos", co:"DSL MAROC SARL, Tánger",
-     items:["Desarrollo y mantengo aplicaciones web full-stack con Java, Spring Boot, JPA/Hibernate y C#/ASP.NET Core, sobre PostgreSQL, SQL Server y Oracle, con interfaces en Angular, React.js, Vue.js y Tailwind CSS.",
-            "Diseño y mantengo APIs REST seguras con JWT y control de acceso por roles, documentadas con Swagger y probadas con Postman.",
-            "Administro y optimizo bases de datos en producción: consultas SQL, indexación, planes de ejecución, copias de seguridad, recuperación, migraciones con Flyway y monitorización con Oracle Enterprise Manager.",
-            "Contenerizo aplicaciones con Docker y automatizo la entrega con GitHub Actions y GitLab CI; despliego en Microsoft Azure y Google Cloud Platform.",
-            "Participo en decisiones técnicas y de arquitectura: revisiones de código, tests unitarios y Clean Architecture."]},
-    {when:"Nov 2024 – Ene 2025", role:"Ingeniero de Software — Full Stack", co:"Enersoft, Tánger",
-     items:["Desarrollé y mantuve una aplicación web de recarga de vehículos eléctricos usada por operadores en varias estaciones.",
-            "Construí microservicios y APIs seguras con ASP.NET Core siguiendo Clean Architecture.",
-            "Creé interfaces responsive con Angular y Bootstrap; optimicé el rendimiento de MySQL, SQL Server y PostgreSQL.",
-            "Implanté pipelines CI/CD con Docker, reduciendo el tiempo de despliegue y eliminando pasos manuales."]},
-    {when:"Feb – Ago 2024", role:"Desarrollador Full-Stack — Prácticas", co:"TE Connectivity, Tánger",
-     items:["Desarrollé una aplicación interna de gestión de ideas para revisar y aprobar propuestas de empleados.",
-            "Diseñé APIs seguras y aplicaciones web con ASP.NET Core y un front-end en Angular + Bootstrap.",
-            "Gestioné y optimicé SQL Server y PostgreSQL; configuré IIS y empaqueté la aplicación en Docker."]}
+    {when:"Feb 2025 – Actualidad", cur:true, role:"Ingeniero IT — Desarrollador Full-Stack e Ingeniero de Bases de Datos", co:"DLS MAROC SARL, Tánger",
+     items:["Me reúno con los usuarios para recoger requisitos y diseño las aplicaciones y bases de datos (BPMN, UML, Merise).",
+            "Desarrollo apps web en Java (Spring Boot, Spring Security, JPA/Hibernate, J2EE), C# (ASP.NET Core), PHP (Laravel) y Python, con front-ends en Angular, React y Vue.js y APIs REST seguras (JWT).",
+            "Me ocupo de Oracle, PostgreSQL y SQL Server: optimización, copias de seguridad, restauraciones, migraciones y monitorización con Oracle Enterprise Manager.",
+            "Desarrollo aplicaciones de análisis de datos y modelos de IA en Python y R, y automatizo informes recurrentes.",
+            "Despliego con Docker y CI/CD en Azure y Google Cloud; aplico prácticas OWASP, doy soporte a usuarios y mantengo la documentación."],
+     tags:["Spring Boot","ASP.NET Core","Laravel","Angular","Oracle","Docker"]},
+    {when:"Feb – Sep 2026", intern:true, role:"Ingeniero Full-Stack y de Bases de Datos, IA", co:"KESSEL, Tánger",
+     items:["Desarrollé apps web y móviles y APIs REST con Java/Spring Boot, J2EE, React y Flutter.",
+            "Diseñé y optimicé bases de datos PostgreSQL, SQL Server y Oracle: modelado, indexación y consultas.",
+            "SmartDesk AI: asistente interno basado en LLM que también analiza datos de negocio en Python (Pandas).",
+            "Aseguré las apps con autenticación JWT, gestión de roles y cifrado de datos sensibles; despliegue con Docker y CI/CD."],
+     tags:["Spring Boot","React","Flutter","LLM","PostgreSQL"]},
+    {when:"Jul 2025 – Ene 2026", intern:true, role:"Ingeniero de Ciencia de Datos y Ciberseguridad", co:"Chantiers et Ateliers du Nord (CAN), Tánger",
+     items:["Recogí y limpié datos de producción y mantenimiento y los analicé en Python (Pandas, NumPy) y R.",
+            "Construí modelos de machine learning (scikit-learn) para detectar anomalías y predecir necesidades de mantenimiento; dashboards de KPI en Power BI.",
+            "Analicé logs de sistemas y red para detectar comportamientos sospechosos; escaneos de vulnerabilidades con Nmap y análisis de tráfico con Wireshark.",
+            "Implanté prácticas de seguridad: gestión de accesos, copias de seguridad y formación de usuarios."],
+     tags:["Python","scikit-learn","Power BI","Nmap","Wireshark"]},
+    {when:"Nov 2024 – Ene 2025", role:"Ingeniero de Software Full-Stack", co:"Enersoft, Tánger",
+     items:["Desarrollé una app web y móvil para gestionar estaciones de recarga de vehículos eléctricos, usada en varios sitios.",
+            "Diseñé microservicios y APIs seguras en ASP.NET Core con Clean Architecture; interfaces responsive con Angular y Bootstrap.",
+            "Optimicé MySQL, SQL Server y PostgreSQL para acelerar la app; automaticé los despliegues con Docker y CI/CD, reduciendo el tiempo de entrega."],
+     tags:["ASP.NET Core","Angular","MySQL","Docker"]},
+    {when:"Feb – Ago 2024", intern:true, role:"Desarrollador Full-Stack", co:"TE Connectivity, Tánger",
+     items:["Desarrollé una app interna donde los empleados proponen ideas y los responsables las revisan y aprueban.",
+            "Diseñé APIs seguras con ASP.NET Core y el front-end con Angular y Bootstrap.",
+            "Gestioné y optimicé SQL Server y PostgreSQL; despliegue en IIS y contenedores Docker."],
+     tags:["ASP.NET Core","Angular","SQL Server","IIS"]}
   ],
   projTitle: "Proyectos",
   projects: [
-    {name:"Stack de monitorización y alertas para Oracle", kind:"Proyecto personal",
-     text:"Observabilidad autoalojada para Oracle y PostgreSQL. Exportadores propios en Python alimentan Prometheus; los dashboards de Grafana muestran wait events, crecimiento de tablespaces, actividad de sesiones y las consultas SQL más costosas. Alertas automáticas por sesiones bloqueantes y umbrales de tablespace. Desplegado con Docker.",
-     tags:["Python","Prometheus","Grafana","Oracle","PostgreSQL","Docker"], link:"https://github.com/issamserbout"},
-    {name:"Plataforma de gestión de centros de formación", kind:"Proyecto personal",
-     text:"Aplicación web para gestionar alumnos, formadores, inscripciones y cursos. APIs REST seguras con Java, Spring Boot, JWT y MongoDB, documentadas con Swagger y consumidas por una interfaz Angular responsive. Probada con Postman y contenerizada con Docker.",
-     tags:["Java","Spring Boot","JWT","MongoDB","Angular","Docker"], link:"https://github.com/issamserbout"},
+    {name:"Asistente médico con IA", kind:"Proyecto personal",
+     text:"Chatbot web: el usuario envía una pregunta o una foto (un síntoma, una lesión de piel, una receta) y la IA explica las posibles causas, valora la gravedad e indica cuándo acudir al médico. Solo responde preguntas médicas y guarda el historial de cada usuario. Seguridad: JWT, datos de pacientes cifrados, filtrado de preguntas fuera de tema y protección contra prompt injection.",
+     tags:["Python","FastAPI","React","PostgreSQL","OpenAI / Gemini API","JWT"], link:"https://github.com/issamserbout"},
+    {name:"Detección de fraude bancario", kind:"Proyecto personal",
+     text:"Dataset de transacciones limpiado y enriquecido con Pandas, SMOTE para el desbalance de clases, y comparación de Regresión Logística, Random Forest y XGBoost por precisión, recall y F1. Resultados e indicadores de riesgo en Power BI.",
+     tags:["Python","Pandas","scikit-learn","XGBoost","Power BI"], link:"https://github.com/issamserbout"},
+    {name:"Herramienta de monitorización de red", kind:"Proyecto personal",
+     text:"App web que descubre los dispositivos de la red (ping, SNMP), sigue su estado en tiempo real y avisa por correo o notificación cuando uno cae. Un dashboard muestra la disponibilidad y el historial de incidentes.",
+     tags:["Spring Boot","Vue.js","MySQL","SNMP"], link:"https://github.com/issamserbout"},
+    {name:"SmartDesk AI", kind:"En KESSEL",
+     text:"Asistente interno basado en LLM que responde a las consultas del personal y analiza datos de negocio en Python (Pandas), con autenticación JWT y acceso por roles.",
+     tags:["Python","LLM","Pandas","JWT"]},
     {name:"Operaciones de recarga de VE", kind:"En Enersoft",
-     text:"Plataforma web usada a diario por operadores en varias estaciones de recarga de vehículos eléctricos. Microservicios con Clean Architecture en ASP.NET Core y front-end responsive en Angular.",
-     tags:["ASP.NET Core","Angular","MySQL","Docker"]},
-    {name:"App de gestión de ideas", kind:"En TE Connectivity",
-     text:"Herramienta interna para recopilar, revisar y aprobar propuestas de empleados de principio a fin. APIs seguras en ASP.NET Core e interfaz Angular, desplegada en IIS con contenedores Docker.",
-     tags:["ASP.NET Core","Angular","SQL Server","IIS"]}
+     text:"Plataforma web y móvil usada a diario por operadores en varios puntos de recarga. Microservicios con Clean Architecture en ASP.NET Core y front-end en Angular.",
+     tags:["ASP.NET Core","Angular","MySQL","Docker"]}
   ],
   codeLink: "Código en GitHub",
-  stackTitle: "Stack",
+  stackTitle: "Habilidades",
+  filterPh: "Filtrar habilidades (p. ej. Oracle, React)…",
+  matches: n => n + (n === 1 ? " resultado" : " resultados"),
   stack: [
-    ["Lenguajes de programación", "Java, J2EE, C#, VB.NET, SQL (PL/SQL, T-SQL), Python, Kotlin, Scala, C, C++, PHP, R, MATLAB, TypeScript, JavaScript"],
-    ["Back-end", "Spring Boot, Spring Security, Hibernate/JPA, desarrollo de APIs REST, JWT, ASP.NET Core, Entity Framework Core, LINQ, Node.js, Laravel, Django, Flask, FastAPI, migraciones con Flyway"],
-    ["Front-end", "HTML5/CSS3, JavaScript (ES6+), TypeScript, Vue.js, Tailwind CSS, diseño web responsive, Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, jQuery, Bootstrap, Vite"],
-    ["Bases de datos", "Oracle Database, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase"],
-    ["Testing y calidad", "JUnit, Mockito, Clean Code, Clean Architecture, Agile/Scrum"],
-    ["Monitorización", "Oracle Enterprise Manager (OEM), Grafana, Prometheus"],
-    ["Cloud y DevOps", "Microsoft Azure, Azure DevOps, Google Cloud Platform, Docker, IIS, Postman, Swagger, Git, CI/CD (GitHub Actions, GitLab CI)"],
-    ["Sistemas", "Unix/Linux, Windows Server, Bash, PowerShell"],
-    ["Redes y seguridad", "Modelo OSI, TCP/IP, enrutamiento, diseño de redes seguras, GNS3"]
+    ["Lenguajes de programación", "Java, C#, VB.NET, Python, PHP, JavaScript (ES6+), TypeScript, SQL, PL/SQL, T-SQL, Kotlin, Scala, C, C++, R, MATLAB"],
+    ["Back-end", "Spring Boot, Spring Security, Hibernate/JPA, J2EE, ASP.NET Core, Entity Framework Core, LINQ, Laravel, Django, Flask, FastAPI, Node.js (Express), APIs REST, JWT, Flyway"],
+    ["Front-end", "Angular, Angular Material, PrimeNG, RxJS, React.js, Next.js, Vue.js, HTML5/CSS3, Bootstrap, Tailwind CSS, jQuery, Vite, Flutter, diseño responsive"],
+    ["Bases de datos", "Oracle, SQL Server, PostgreSQL, MySQL, MongoDB, SQLite, Firebase, optimización, migración, backup/restore"],
+    ["Ciencia de datos e IA", "Machine Learning, Deep Learning, NLP, LLMs (OpenAI / Gemini API), Prompt Engineering, Pandas, NumPy, scikit-learn, XGBoost, TensorFlow, Matplotlib, Jupyter, Power BI, web scraping"],
+    ["Ciberseguridad", "OWASP Top 10, análisis de vulnerabilidades, análisis de logs, detección de intrusiones, Nmap, Wireshark, cifrado, RBAC, MFA, DRP, ISO 27001"],
+    ["DevOps y cloud", "Docker, Git, GitHub Actions, GitLab CI, Azure, Azure DevOps, Google Cloud, IIS, VMware"],
+    ["Sistemas y redes", "Linux/Unix, Windows Server, Active Directory, Bash, PowerShell, modelo OSI, TCP/IP, enrutamiento, DNS, DHCP, VPN, VLAN, SNMP"],
+    ["Monitorización y soporte", "Grafana, Prometheus, Zabbix, Oracle Enterprise Manager (OEM), GLPI, ITIL"],
+    ["Testing y métodos", "JUnit, Mockito, Postman, Swagger, Clean Code, Clean Architecture, Merise, UML, BPMN, Agile/Scrum, modelo en V"]
   ],
   certTitle: "Certificaciones",
   certs: [
@@ -478,19 +631,20 @@ es: {
   eduTitle: "Formación",
   edu: [
     {yr:"2025 – 2027 (en curso)", name:"Máster Universitario en Ingeniería Informática", sc:"Universidad Pablo de Olavide, Sevilla, España"},
-    {yr:"2022 – 2024", name:"Master Spécialisé en Ingeniería Informática (Ingénierie Informatique)", sc:"Facultad de Ciencias, Universidad Abdelmalek Essaâdi, Tetuán"},
+    {yr:"2022 – 2024", name:"Máster en Ingeniería Informática", sc:"Facultad de Ciencias, Universidad Abdelmalek Essaâdi, Tetuán"},
     {yr:"2019 – 2022", name:"Grado en Ciencias de la Computación y Matemáticas", sc:"Facultad de Ciencias, Universidad Abdelmalek Essaâdi, Tetuán"},
     {yr:"2019", name:"Bachillerato en Ciencias Físicas y Químicas", sc:"Instituto Abdelmoumen Al Mouahidi, Tánger"}
   ],
   langTitle: "Idiomas",
-  langs: [["Árabe","Nativo"],["Inglés","Intermedio alto (B2)"],["Español","Intermedio alto (B2)"],["Francés","Intermedio alto (B2)"]],
+  langs: [["Árabe","Nativo",100],["Francés","Profesional",80],["Inglés","Profesional",75],["Español","Intermedio",60],["Neerlandés","Básico (A2)",30]],
   contactTitle: "Hablemos",
-  contactSub: "Abierto a puestos full-stack, back-end y de bases de datos, en remoto o con reubicación. Si tienes un puesto o un proyecto en mente, escríbeme.",
-  form: {title:"Enviar un mensaje", name:"Nombre completo", email:"Correo", phone:"Teléfono", subject:"Asunto", message:"Mensaje", file:"Adjunto (opcional)", filePh:"PDF, imagen o documento, máx. 10 MB", send:"Enviar mensaje", sending:"Enviando…", sent:"Mensaje enviado. Te responderé pronto.", badType:"Este tipo de archivo no se acepta. Usa PDF, DOC, DOCX, PNG, JPG, TXT o ZIP.", tooBig:"El archivo supera los 10 MB. Elige uno más pequeño.",
+  contactSub: "Abierto a puestos full-stack, back-end, de bases de datos y de datos, en remoto o con reubicación. Si tienes un puesto o un proyecto en mente, escríbeme.",
+  form: {title:"Enviar un mensaje", name:"Nombre completo", email:"Correo", phone:"Teléfono", subject:"Asunto", message:"Mensaje", file:"Adjunto (opcional)", filePh:"PDF, imagen o documento, máx. 10 MB", send:"Enviar mensaje", sending:"Enviando…", sent:"Mensaje enviado. Te responderé pronto.", invalid:"Rellena los campos obligatorios.", badType:"Este tipo de archivo no se acepta. Usa PDF, DOC, DOCX, PNG, JPG, TXT o ZIP.", tooBig:"El archivo supera los 10 MB. Elige uno más pequeño.",
          namePh:"Tu nombre", emailPh:"tu@ejemplo.com", subjectPh:"¿De qué se trata?", messagePh:"Unas líneas sobre el puesto o el proyecto"},
-  labels: {email:"Correo", phone:"Teléfono", whatsapp:"WhatsApp", github:"GitHub", linkedin:"LinkedIn"},
-  foot: "© 2026 Issam Serbout",
-  themeLabel: "Cambiar tema", langLabel: "View in English"
+  labels: {email:"Correo", phone:"Teléfono", whatsapp:"WhatsApp", github:"GitHub", linkedin:"LinkedIn", location:"Ubicación"},
+  location: "Tánger, Marruecos",
+  foot: "© " + new Date().getFullYear() + " Issam Serbout",
+  themeLabel: "Cambiar tema", langLabel: "View in English", menuLabel: "Menú", topLabel: "Volver arriba"
 }
 };
 
@@ -500,22 +654,294 @@ const CONTACT = {
   linkedin:"https://www.linkedin.com/in/issam-serbout", cv:"Issam_Serbout_CV.pdf"
 };
 
-const SNIPPETS = {"back": [{"label": "Spring Boot", "lang": "java", "code": "@RestController\n@RequestMapping(\"/api/courses\")\npublic class CourseController {\n    private final CourseService service;\n\n    @GetMapping(\"/{id}\")\n    @PreAuthorize(\"hasRole('TRAINER')\")\n    public CourseDto get(@PathVariable String id) {\n        return service.findById(id);\n    }\n}"}, {"label": "ASP.NET Core", "lang": "csharp", "code": "[ApiController]\n[Route(\"api/courses\")]\npublic class CoursesController(ICourseService service) : ControllerBase\n{\n    [HttpGet(\"{id}\")]\n    [Authorize(Roles = \"Trainer\")]\n    public async Task<ActionResult<CourseDto>> Get(string id)\n        => await service.FindByIdAsync(id) is { } c ? c : NotFound();\n}"}, {"label": "FastAPI", "lang": "python", "code": "router = APIRouter(prefix=\"/api/courses\")\n\n@router.get(\"/{id}\", response_model=CourseOut)\nasync def get_course(id: str, user=Depends(require_role(\"trainer\"))):\n    course = await courses.find_by_id(id)\n    if course is None:\n        raise HTTPException(status_code=404)\n    return course"}, {"label": "Django", "lang": "python", "code": "class CourseViewSet(viewsets.ReadOnlyModelViewSet):\n    queryset = Course.objects.select_related(\"trainer\")\n    serializer_class = CourseSerializer\n    permission_classes = [IsAuthenticated, IsTrainer]\n\nrouter = DefaultRouter()\nrouter.register(\"api/courses\", CourseViewSet)"}, {"label": "Flask", "lang": "python", "code": "@bp.get(\"/api/courses/<id>\")\n@jwt_required()\ndef get_course(id):\n    course = Course.query.get_or_404(id)\n    return jsonify(course.to_dict())"}, {"label": "Node.js", "lang": "js", "code": "router.get('/api/courses/:id', auth('trainer'), async (req, res) => {\n  const course = await Course.findById(req.params.id);\n  if (!course) return res.sendStatus(404);\n  res.json(course);\n});"}, {"label": "Laravel", "lang": "php", "code": "Route::middleware('auth:sanctum')\n    ->get('/api/courses/{id}', function (string $id) {\n        return Course::with('trainer')->findOrFail($id);\n    });"}], "front": [{"label": "Angular", "lang": "ts", "code": "@Component({\n  selector: 'app-course',\n  template: `<h2>{{ course()?.title }}<\/h2>`,\n})\nexport class CourseComponent {\n  private http = inject(HttpClient);\n  course = toSignal(this.http.get<Course>('/api/courses/42'));\n}"}, {"label": "React", "lang": "js", "code": "export function Course({ id }) {\n  const [course, setCourse] = useState(null);\n\n  useEffect(() => {\n    fetch(`/api/courses/${id}`).then(r => r.json()).then(setCourse);\n  }, [id]);\n\n  return <h2>{course?.title}<\/h2>;\n}"}, {"label": "Vue.js", "lang": "js", "code": "<script setup>\nconst props = defineProps(['id']);\nconst course = ref(null);\n\nonMounted(async () => {\n  const res = await fetch(`/api/courses/${props.id}`);\n  course.value = await res.json();\n});\n<\/script>\n\n<template><h2>{{ course?.title }}<\/h2><\/template>"}, {"label": "Next.js", "lang": "js", "code": "export default async function CoursePage({ params }) {\n  const course = await fetch(`${API}/api/courses/${params.id}`, {\n    next: { revalidate: 60 },\n  }).then(r => r.json());\n\n  return <h2>{course.title}<\/h2>;\n}"}, {"label": "Tailwind CSS", "lang": "html", "code": "<article class=\"rounded-xl border p-6 shadow-sm hover:shadow-md\">\n  <h2 class=\"text-lg font-semibold\">{{ course.title }}<\/h2>\n  <p class=\"text-sm text-slate-500\">{{ course.seats }} seats left<\/p>\n  <button class=\"mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white\">\n    Enroll\n  <\/button>\n<\/article>"}, {"label": "jQuery", "lang": "js", "code": "$.getJSON(`/api/courses/${id}`, course => {\n  $('#title').text(course.title);\n  $('#seats').toggleClass('full', course.seats === 0);\n});"}], "data": [{"label": "Oracle SQL", "lang": "sql", "code": "-- Who is blocking whom, right now\nSELECT s.sid,\n       s.username,\n       s.blocking_session,\n       s.event,\n       s.seconds_in_wait\nFROM   v$session s\nWHERE  s.blocking_session IS NOT NULL\nORDER  BY s.seconds_in_wait DESC;"}, {"label": "PL/SQL", "lang": "sql", "code": "CREATE OR REPLACE PROCEDURE enroll_student (\n    p_student IN NUMBER,\n    p_course  IN NUMBER\n) AS\nBEGIN\n    INSERT INTO enrollment (student_id, course_id, enrolled_at)\n    VALUES (p_student, p_course, SYSDATE);\n    COMMIT;\nEXCEPTION\n    WHEN DUP_VAL_ON_INDEX THEN\n        RAISE_APPLICATION_ERROR(-20001, 'Already enrolled');\nEND;"}, {"label": "T-SQL", "lang": "sql", "code": "-- Slowest queries on SQL Server\nSELECT TOP (10)\n       qs.total_elapsed_time / qs.execution_count AS avg_time,\n       SUBSTRING(st.text, 1, 200)                 AS query_text\nFROM   sys.dm_exec_query_stats qs\nCROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st\nORDER  BY avg_time DESC;"}, {"label": "PostgreSQL", "lang": "sql", "code": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT c.title, count(e.*) AS students\nFROM   course c\nLEFT JOIN enrollment e ON e.course_id = c.id\nGROUP  BY c.title\nORDER  BY students DESC;"}, {"label": "MongoDB", "lang": "js", "code": "db.courses.aggregate([\n  { $match: { status: \"open\" } },\n  { $lookup: { from: \"enrollments\", localField: \"_id\",\n               foreignField: \"courseId\", as: \"students\" } },\n  { $project: { title: 1, total: { $size: \"$students\" } } }\n]);"}, {"label": "Flyway", "lang": "sql", "code": "-- V12__add_course_index.sql\nCREATE INDEX idx_course_trainer\n    ON course (trainer_id, start_date);\n\nALTER TABLE enrollment\n    ADD CONSTRAINT fk_enroll_course\n    FOREIGN KEY (course_id) REFERENCES course (id);"}], "devops": [{"label": "Docker", "lang": "docker", "code": "FROM eclipse-temurin:21-jre-alpine\nWORKDIR /app\nCOPY target/courses-api.jar app.jar\nEXPOSE 8080\nHEALTHCHECK CMD wget -qO- localhost:8080/actuator/health || exit 1\nENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]"}, {"label": "GitHub Actions", "lang": "yaml", "code": "name: build\non: [push, pull_request]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-java@v4\n        with: { distribution: temurin, java-version: 21 }\n      - run: ./mvnw -B verify"}, {"label": "GitLab CI", "lang": "yaml", "code": "stages: [test, deploy]\n\ntest:\n  stage: test\n  image: mcr.microsoft.com/dotnet/sdk:8.0\n  script:\n    - dotnet test\n\ndeploy:\n  stage: deploy\n  script: docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA\n  only: [main]"}, {"label": "Bash", "lang": "bash", "code": "#!/usr/bin/env bash\n# Nightly Oracle backup with RMAN\nexport ORACLE_SID=PROD\nrman target / <<EOF\n  BACKUP DATABASE PLUS ARCHIVELOG DELETE INPUT;\n  DELETE NOPROMPT OBSOLETE;\nEOF"}, {"label": "PowerShell", "lang": "ps", "code": "# Restart the IIS app pool if the API stops answering\n$res = Invoke-WebRequest https://api.local/health -UseBasicParsing\nif ($res.StatusCode -ne 200) {\n    Restart-WebAppPool -Name \"CoursesApi\"\n    Write-Output \"App pool restarted at $(Get-Date)\"\n}"}], "more": [{"label": "Kotlin", "lang": "kotlin", "code": "data class Course(val id: String, val title: String, val seats: Int)\n\nfun List<Course>.available(): List<Course> =\n    filter { it.seats > 0 }.sortedBy { it.title }"}, {"label": "Scala", "lang": "scala", "code": "case class Course(id: String, title: String, seats: Int)\n\nval available = courses\n  .filter(_.seats > 0)\n  .sortBy(_.title)"}, {"label": "C", "lang": "c", "code": "#include <stdio.h>\n\nint main(void) {\n    int seats[] = {12, 0, 7};\n    for (int i = 0; i < 3; i++)\n        printf(\"course %d: %d seats\\n\", i, seats[i]);\n    return 0;\n}"}, {"label": "C++", "lang": "cpp", "code": "#include <algorithm>\n#include <vector>\n\nstruct Course { std::string title; int seats; };\n\nvoid sortBySeats(std::vector<Course>& v) {\n    std::sort(v.begin(), v.end(), [](const Course& a, const Course& b) {\n        return a.seats > b.seats;\n    });\n}"}, {"label": "R", "lang": "r", "code": "library(dplyr)\n\nenrollments |>\n  group_by(course) |>\n  summarise(students = n(), avg_grade = mean(grade)) |>\n  arrange(desc(students))"}, {"label": "MATLAB", "lang": "matlab", "code": "grades = [14 16 11 18 9];\nfprintf('Mean grade: %.2f\\n', mean(grades));\nhistogram(grades, 'BinWidth', 2);\ntitle('Grade distribution');"}, {"label": "VB.NET", "lang": "vb", "code": "Public Function GetCourse(id As Integer) As Course\n    Using db As New CoursesContext()\n        Return db.Courses.Find(id)\n    End Using\nEnd Function"}, {"label": "PHP", "lang": "php", "code": "function availableCourses(array $courses): array\n{\n    return array_values(array_filter(\n        $courses,\n        fn(array $c) => $c['seats'] > 0\n    ));\n}"}]};
-const PLANGS = ["Java","C#","Python","TypeScript","JavaScript","SQL","PL/SQL","T-SQL","Kotlin","Scala","PHP","VB.NET","C","C++","R","MATLAB"];
+const SNIPPETS = {
+back: [
+ {label:"Spring Boot", lang:"java", file:"CourseController.java", code:`@RestController
+@RequestMapping("/api/courses")
+public class CourseController {
+    private final CourseService service;
 
-/* tiny syntax highlighter */
+    @GetMapping("/{id}")
+    @PreAuthorize("hasRole('TRAINER')")
+    public CourseDto get(@PathVariable String id) {
+        return service.findById(id);
+    }
+}`},
+ {label:"ASP.NET Core", lang:"csharp", file:"CoursesController.cs", code:`[ApiController]
+[Route("api/courses")]
+public class CoursesController(ICourseService service) : ControllerBase
+{
+    [HttpGet("{id}")]
+    [Authorize(Roles = "Trainer")]
+    public async Task<ActionResult<CourseDto>> Get(string id)
+        => await service.FindByIdAsync(id) is { } c ? c : NotFound();
+}`},
+ {label:"Laravel", lang:"php", file:"CourseController.php", code:`class CourseController extends Controller
+{
+    public function show(Course $course): CourseResource
+    {
+        $this->authorize('view', $course);
+
+        return new CourseResource($course->load('trainer'));
+    }
+}
+
+Route::middleware('auth:sanctum')
+    ->get('/api/courses/{course}', [CourseController::class, 'show']);`},
+ {label:"FastAPI", lang:"python", file:"courses.py", code:`router = APIRouter(prefix="/api/courses")
+
+@router.get("/{id}", response_model=CourseOut)
+async def get_course(id: str, user=Depends(require_role("trainer"))):
+    course = await courses.find_by_id(id)
+    if course is None:
+        raise HTTPException(status_code=404)
+    return course`},
+ {label:"Django", lang:"python", file:"views.py", code:`class CourseViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Course.objects.select_related("trainer")
+    serializer_class = CourseSerializer
+    permission_classes = [IsAuthenticated, IsTrainer]
+
+router = DefaultRouter()
+router.register("api/courses", CourseViewSet)`},
+ {label:"Node.js", lang:"js", file:"courses.js", code:`router.get('/api/courses/:id', auth('trainer'), async (req, res) => {
+  const course = await Course.findById(req.params.id);
+  if (!course) return res.sendStatus(404);
+  res.json(course);
+});`}
+],
+front: [
+ {label:"Angular", lang:"ts", file:"course.component.ts", code:`@Component({
+  selector: 'app-course',
+  template: \`<h2>{{ course()?.title }}</h2>\`,
+})
+export class CourseComponent {
+  private http = inject(HttpClient);
+  course = toSignal(this.http.get<Course>('/api/courses/42'));
+}`},
+ {label:"React", lang:"js", file:"Course.jsx", code:`export function Course({ id }) {
+  const [course, setCourse] = useState(null);
+
+  useEffect(() => {
+    fetch(\`/api/courses/\${id}\`).then(r => r.json()).then(setCourse);
+  }, [id]);
+
+  return <h2>{course?.title}</h2>;
+}`},
+ {label:"Vue.js", lang:"js", file:"Course.vue", code:`<script setup>
+const props = defineProps(['id']);
+const course = ref(null);
+
+onMounted(async () => {
+  const res = await fetch(\`/api/courses/\${props.id}\`);
+  course.value = await res.json();
+});
+<\/script>
+
+<template><h2>{{ course?.title }}</h2></template>`},
+ {label:"Next.js", lang:"js", file:"page.jsx", code:`export default async function CoursePage({ params }) {
+  const course = await fetch(\`\${API}/api/courses/\${params.id}\`, {
+    next: { revalidate: 60 },
+  }).then(r => r.json());
+
+  return <h2>{course.title}</h2>;
+}`},
+ {label:"Flutter", lang:"dart", file:"course_card.dart", code:`class CourseCard extends StatelessWidget {
+  const CourseCard({super.key, required this.course});
+  final Course course;
+
+  @override
+  Widget build(BuildContext context) => Card(
+        child: ListTile(
+          title: Text(course.title),
+          subtitle: Text('\${course.seats} seats left'),
+        ),
+      );
+}`},
+ {label:"Tailwind CSS", lang:"html", file:"course.html", code:`<article class="rounded-xl border p-6 shadow-sm hover:shadow-md">
+  <h2 class="text-lg font-semibold">{{ course.title }}</h2>
+  <p class="text-sm text-slate-500">{{ course.seats }} seats left</p>
+  <button class="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white">
+    Enroll
+  </button>
+</article>`}
+],
+data: [
+ {label:"Oracle SQL", lang:"sql", file:"blocking.sql", code:`-- Who is blocking whom, right now
+SELECT s.sid,
+       s.username,
+       s.blocking_session,
+       s.event,
+       s.seconds_in_wait
+FROM   v$session s
+WHERE  s.blocking_session IS NOT NULL
+ORDER  BY s.seconds_in_wait DESC;`},
+ {label:"PL/SQL", lang:"sql", file:"enroll_student.sql", code:`CREATE OR REPLACE PROCEDURE enroll_student (
+    p_student IN NUMBER,
+    p_course  IN NUMBER
+) AS
+BEGIN
+    INSERT INTO enrollment (student_id, course_id, enrolled_at)
+    VALUES (p_student, p_course, SYSDATE);
+    COMMIT;
+EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Already enrolled');
+END;`},
+ {label:"T-SQL", lang:"sql", file:"slow_queries.sql", code:`-- Slowest queries on SQL Server
+SELECT TOP (10)
+       qs.total_elapsed_time / qs.execution_count AS avg_time,
+       SUBSTRING(st.text, 1, 200)                 AS query_text
+FROM   sys.dm_exec_query_stats qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
+ORDER  BY avg_time DESC;`},
+ {label:"PostgreSQL", lang:"sql", file:"explain.sql", code:`EXPLAIN (ANALYZE, BUFFERS)
+SELECT c.title, count(e.*) AS students
+FROM   course c
+LEFT JOIN enrollment e ON e.course_id = c.id
+GROUP  BY c.title
+ORDER  BY students DESC;`},
+ {label:"MongoDB", lang:"js", file:"aggregate.js", code:`db.courses.aggregate([
+  { $match: { status: "open" } },
+  { $lookup: { from: "enrollments", localField: "_id",
+               foreignField: "courseId", as: "students" } },
+  { $project: { title: 1, total: { $size: "$students" } } }
+]);`},
+ {label:"Flyway", lang:"sql", file:"V12__add_course_index.sql", code:`-- V12__add_course_index.sql
+CREATE INDEX idx_course_trainer
+    ON course (trainer_id, start_date);
+
+ALTER TABLE enrollment
+    ADD CONSTRAINT fk_enroll_course
+    FOREIGN KEY (course_id) REFERENCES course (id);`}
+],
+ai: [
+ {label:"scikit-learn", lang:"python", file:"fraud_model.py", code:`X_res, y_res = SMOTE(random_state=42).fit_resample(X_train, y_train)
+
+model = XGBClassifier(n_estimators=400, max_depth=6, learning_rate=0.05)
+model.fit(X_res, y_res)
+
+pred = model.predict(X_test)
+print(classification_report(y_test, pred, digits=3))`},
+ {label:"Pandas", lang:"python", file:"maintenance.py", code:`df = pd.read_csv("sensors.csv", parse_dates=["ts"])
+df = df.dropna(subset=["temp", "vibration"]).set_index("ts")
+
+hourly = df.groupby("machine_id").resample("1h").mean()
+hourly["z"] = (hourly.vibration - hourly.vibration.mean()) / hourly.vibration.std()
+alerts = hourly[hourly.z.abs() > 3]`},
+ {label:"LLM API", lang:"python", file:"assistant.py", code:`SYSTEM = "You answer medical questions only. Refuse anything else."
+
+@router.post("/api/ask")
+async def ask(q: Question, user=Depends(current_user)):
+    if is_off_topic(q.text):
+        raise HTTPException(status_code=422, detail="Medical questions only")
+    reply = await llm.chat(system=SYSTEM, messages=history(user) + [q.text])
+    await save_turn(user.id, q.text, reply)
+    return {"answer": reply}`},
+ {label:"R", lang:"r", file:"analysis.R", code:`library(dplyr)
+
+downtime |>
+  group_by(machine) |>
+  summarise(incidents = n(), mean_hours = mean(hours)) |>
+  arrange(desc(incidents))`}
+],
+devops: [
+ {label:"Docker", lang:"docker", file:"Dockerfile", code:`FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+COPY target/courses-api.jar app.jar
+EXPOSE 8080
+HEALTHCHECK CMD wget -qO- localhost:8080/actuator/health || exit 1
+ENTRYPOINT ["java", "-jar", "app.jar"]`},
+ {label:"GitHub Actions", lang:"yaml", file:".github/workflows/build.yml", code:`name: build
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - run: ./mvnw -B verify`},
+ {label:"GitLab CI", lang:"yaml", file:".gitlab-ci.yml", code:`stages: [test, deploy]
+
+test:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  script:
+    - dotnet test
+
+deploy:
+  stage: deploy
+  script: docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  only: [main]`},
+ {label:"Bash", lang:"bash", file:"backup.sh", code:`#!/usr/bin/env bash
+# Nightly Oracle backup with RMAN
+export ORACLE_SID=PROD
+rman target / <<EOF
+  BACKUP DATABASE PLUS ARCHIVELOG DELETE INPUT;
+  DELETE NOPROMPT OBSOLETE;
+EOF`},
+ {label:"PowerShell", lang:"ps", file:"health.ps1", code:`# Restart the IIS app pool if the API stops answering
+$res = Invoke-WebRequest https://api.local/health -UseBasicParsing
+if ($res.StatusCode -ne 200) {
+    Restart-WebAppPool -Name "CoursesApi"
+    Write-Output "App pool restarted at $(Get-Date)"
+}`}
+],
+more: [
+ {label:"Kotlin", lang:"kotlin", file:"Course.kt", code:`data class Course(val id: String, val title: String, val seats: Int)
+
+fun List<Course>.available(): List<Course> =
+    filter { it.seats > 0 }.sortedBy { it.title }`},
+ {label:"Scala", lang:"scala", file:"Course.scala", code:`case class Course(id: String, title: String, seats: Int)
+
+val available = courses
+  .filter(_.seats > 0)
+  .sortBy(_.title)`},
+ {label:"C", lang:"c", file:"seats.c", code:`#include <stdio.h>
+
+int main(void) {
+    int seats[] = {12, 0, 7};
+    for (int i = 0; i < 3; i++)
+        printf("course %d: %d seats\\n", i, seats[i]);
+    return 0;
+}`},
+ {label:"C++", lang:"cpp", file:"sort.cpp", code:`#include <algorithm>
+#include <vector>
+
+struct Course { std::string title; int seats; };
+
+void sortBySeats(std::vector<Course>& v) {
+    std::sort(v.begin(), v.end(), [](const Course& a, const Course& b) {
+        return a.seats > b.seats;
+    });
+}`},
+ {label:"MATLAB", lang:"matlab", file:"grades.m", code:`grades = [14 16 11 18 9];
+fprintf('Mean grade: %.2f\\n', mean(grades));
+histogram(grades, 'BinWidth', 2);
+title('Grade distribution');`},
+ {label:"VB.NET", lang:"vb", file:"Courses.vb", code:`Public Function GetCourse(id As Integer) As Course
+    Using db As New CoursesContext()
+        Return db.Courses.Find(id)
+    End Using
+End Function`}
+]};
+const PLANGS = ["Java","C#","PHP","Python","TypeScript","JavaScript","SQL","PL/SQL","T-SQL","Dart","Kotlin","Scala","VB.NET","C","C++","R","MATLAB"];
+const ALIAS = {"Java":"Spring Boot","C#":"ASP.NET Core","PHP":"Laravel","Python":"FastAPI","TypeScript":"Angular","JavaScript":"React","SQL":"Oracle SQL","Dart":"Flutter"};
+
+/* ===================== SYNTAX HIGHLIGHTER ===================== */
 function hl(code, lang){
   const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const KW = {
     java:"public|private|final|class|return|new|void|static|import",
     csharp:"public|private|class|async|await|return|is|new|string|var",
-    python:"async|def|await|if|is|None|raise|return|from|import|class",
+    python:"async|def|await|if|is|None|raise|return|from|import|class|print",
     ts:"export|class|private|const|let|return|new|import",
     js:"export|default|function|const|let|return|async|await|null|new|import|if",
-    php:"function|return|array|fn|use|new",
+    php:"function|return|array|fn|use|new|class|extends|public",
+    dart:"class|const|super|required|final|extends|return|override",
     sql:"SELECT|FROM|WHERE|ORDER|BY|IS|NOT|NULL|DESC|CREATE|INDEX|ON|ALTER|TABLE|ADD|CONSTRAINT|FOREIGN|KEY|REFERENCES|AND|OR|REPLACE|PROCEDURE|IN|AS|BEGIN|END|INSERT|INTO|VALUES|COMMIT|EXCEPTION|WHEN|THEN|TOP|CROSS|APPLY|LEFT|JOIN|GROUP|EXPLAIN|ANALYZE|BUFFERS|NUMBER",
     docker:"FROM|WORKDIR|COPY|EXPOSE|HEALTHCHECK|CMD|ENTRYPOINT|RUN",
-    yaml:"",
     bash:"export|if|then|fi|for|do|done",
     ps:"if|else|foreach|function",
     kotlin:"data|class|val|var|fun|return",
@@ -524,19 +950,17 @@ function hl(code, lang){
     cpp:"int|void|for|return|struct|const",
     r:"library|function",
     matlab:"function|end|for|if",
-    vb:"Public|Function|As|Integer|Using|New|Return|End",
-    html:""
+    vb:"Public|Function|As|Integer|Using|New|Return|End"
   }[lang] || "";
   const hash = ["python","docker","yaml","bash","ps","r"].includes(lang);
   const prep = ["c","cpp"].includes(lang);
   const parts = [
-    hash ? "(#[^\\n]*)" : (lang === "matlab" ? "(%[^\\n]*)" : "(--[^\\n]*|//[^\\n]*)"),
+    lang === "vb" ? "('[^\\n]*)" : hash ? "(#[^\\n]*)" : lang === "matlab" ? "(%[^\\n]*)" : "(--[^\\n]*|//[^\\n]*)",
     "(\"(?:[^\"\\\\\\n]|\\\\.)*\"|'(?:[^'\\\\\\n]|\\\\.)*'|`(?:[^`\\\\]|\\\\.)*`)",
-    prep ? "(#\\w+|@\\w+)" : (lang === "yaml" ? "(^\\s*-?\\s*[\\w-]+(?=:))" : "(@\\w+|\\[\\w+(?=[\\](]))"),
+    prep ? "(#\\w+|@\\w+)" : lang === "yaml" ? "(^\\s*-?\\s*[\\w-]+(?=:))" : "(@\\w+|\\[\\w+(?=[\\](]))",
     KW ? "\\b(" + KW + ")\\b" : "(\\$NEVER\\$)",
     ["sql","docker","yaml","bash","html"].includes(lang) ? "(\\$NEVER2\\$)" : "\\b([A-Z][A-Za-z0-9]+)\\b"
   ];
-  if (lang === "vb") parts[0] = "('[^\\n]*)";
   const re = new RegExp(parts.join("|"), "gm");
   let out = "", last = 0, m;
   while ((m = re.exec(code))) {
@@ -549,90 +973,156 @@ function hl(code, lang){
   return out + esc(code.slice(last));
 }
 
-
+/* ===================== RENDER ===================== */
 const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-let lang = 'en', group = 'back', variant = 0;
-try { const s = localStorage.getItem('lang'); if (s === 'es' || s === 'en') lang = s; } catch(e) {}
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SECTIONS = ['about','work','projects','stack','certs','edu','contact'];
+let lang = 'en', group = 'back', variant = 0, skillQ = '';
 
-const SECTIONS = [['about','about'],['work','work'],['projects','projects'],['stack','stack'],['certs','certs'],['edu','edu'],['contact','contact']];
+const qLang = new URLSearchParams(location.search).get('lang');
+try { const s = localStorage.getItem('lang'); if (s === 'es' || s === 'en') lang = s; } catch(e) {}
+if (qLang === 'es' || qLang === 'en') lang = qLang;
+else if (!(() => { try { return localStorage.getItem('lang'); } catch(e) { return null; } })() && (navigator.language || '').startsWith('es')) lang = 'es';
+
+/* one copy of the photo, reused in the bar */
+$('#barPhoto').src = $('#heroPhoto').src;
+
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 1800); }
+async function copyText(txt, msg){ try { await navigator.clipboard.writeText(txt); toast(msg); } catch(e) { toast(txt); } }
 
 function render(){
   const t = D[lang];
   document.documentElement.lang = lang;
-  document.querySelectorAll('[data-t]').forEach(el => el.textContent = t[el.dataset.t]);
-  document.querySelectorAll('[data-f]').forEach(el => el.textContent = t.form[el.dataset.f]);
-  document.querySelectorAll('[data-p]').forEach(el => el.placeholder = t.form[el.dataset.p]);
+  $$('[data-t]').forEach(el => { const v = t[el.dataset.t]; if (typeof v === 'string') el.textContent = v; });
+  $$('[data-f]').forEach(el => el.textContent = t.form[el.dataset.f]);
+  $$('[data-p]').forEach(el => el.placeholder = t.form[el.dataset.p]);
+  $('#heroTitle').innerHTML = t.heroTitle;
   $('#langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
   $('#langBtn').setAttribute('aria-label', t.langLabel);
   $('#themeBtn').setAttribute('aria-label', t.themeLabel);
-  $('#links').innerHTML = SECTIONS.map(([id,k]) => `<li><a href="#${id}">${t.nav[k]}</a></li>`).join('');
+  $('#menuBtn').setAttribute('aria-label', t.menuLabel);
+  $('#toTop').setAttribute('aria-label', t.topLabel);
+  $('#skillQ').placeholder = t.filterPh;
+  $('#copyMail').setAttribute('aria-label', t.copied);
+  $('#links').innerHTML = SECTIONS.map(id => `<li><a href="#${id}">${t.nav[id]}</a></li>`).join('');
+  $('#chips').innerHTML = t.chips.map(c => `<li>${esc(c)}</li>`).join('');
   $('#aboutBody').innerHTML = t.about.map(p => `<p>${esc(p)}</p>`).join('');
   $('#facts').innerHTML = t.stats.map(([n,l]) => `<div><b>${n}</b><span>${esc(l)}</span></div>`).join('');
-  $('#jobs').innerHTML = t.work.map(j => `<article class="job"><div class="when${j.cur?' cur':''}">${esc(j.when)}</div><div><h3>${esc(j.role)}</h3><div class="co">${esc(j.co)}</div><ul>${j.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div></article>`).join('');
-  $('#proj').innerHTML = t.projects.map((p,i) => `<article class="pj${i===0?' big':''}"><div class="k">${esc(p.kind)}</div><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p><div class="tags">${p.tags.map(g=>`<span>${esc(g)}</span>`).join('')}</div>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${t.codeLink}</a>`:''}</article>`).join('');
-  $('#stackBody').innerHTML = t.stack.map(([h,v]) => `<div><h3>${esc(h)}</h3><p>${esc(v)}</p></div>`).join('');
+  $('#jobs').innerHTML = t.work.map(j => `<article class="job rv"><div class="when${j.cur?' cur':''}">${esc(j.when)}</div><div class="body"><h3>${esc(j.role)}</h3><div class="co">${esc(j.co)}${j.intern?`<span class="badge">${t.internship}</span>`:''}</div><ul>${j.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul><div class="tags">${(j.tags||[]).map(g=>`<span>${esc(g)}</span>`).join('')}</div></div></article>`).join('');
+  $('#proj').innerHTML = t.projects.map((p,i) => `<article class="pj rv${i===0?' big':''}"><div class="k">${esc(p.kind)}</div><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p><div class="tags">${p.tags.map(g=>`<span>${esc(g)}</span>`).join('')}</div>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${t.codeLink} →</a>`:''}</article>`).join('');
+  renderStack();
   const seal = '<svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 3.5 2.7 6.7 8 8 5.3-1.3 8-4.5 8-8V6l-8-4zm-1.2 12.5-2.9-2.9 1.4-1.4 1.5 1.5 3.9-3.9 1.4 1.4-5.3 5.3z"/></svg>';
-  $('#certList').innerHTML = t.certs.map(c => `<a class="cert" href="${c.file}" data-file="${c.file}" data-name="${esc(c.name)}"><span class="seal">${seal}</span><span><h3>${esc(c.name)}</h3><span class="d">Oracle University, ${esc(c.date)}</span></span><span class="go">${t.certView}</span></a>`).join('');
+  $('#certList').innerHTML = t.certs.map(c => `<a class="cert" href="${c.file}" data-file="${c.file}" data-name="${esc(c.name)}"><span class="seal">${seal}</span><span><h3>${esc(c.name)}</h3><span class="d">Oracle University · ${esc(c.date)}</span></span><span class="go">${t.certView} →</span></a>`).join('');
   $('#eduList').innerHTML = t.edu.map(e => `<div><div class="y">${esc(e.yr)}</div><h3>${esc(e.name)}</h3><p>${esc(e.sc)}</p></div>`).join('');
-  $('#langList').innerHTML = t.langs.map(([a,b]) => `<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('');
+  $('#langList').innerHTML = t.langs.map(([a,b,p]) => `<div class="lg"><div class="lg-top"><b>${esc(a)}</b><span>${esc(b)}</span></div><div class="meter" role="img" aria-label="${esc(a)}: ${esc(b)}"><i style="width:${p}%"></i></div></div>`).join('');
   const L = t.labels;
   $('#clist').innerHTML = [
     [L.email, CONTACT.email, 'mailto:'+CONTACT.email],
     [L.phone, CONTACT.phone, 'tel:'+CONTACT.tel],
     [L.whatsapp, CONTACT.phone, CONTACT.whatsapp],
     [L.linkedin, 'issam-serbout', CONTACT.linkedin],
-    [L.github, 'issamserbout', CONTACT.github]
+    [L.github, 'issamserbout', CONTACT.github],
+    [L.location, t.location, 'https://maps.google.com/?q=Tangier,Morocco']
   ].map(([k,v,h]) => `<li><a href="${h}"${h.startsWith('http')?' target="_blank" rel="noopener"':''}><span>${k}</span><span>${esc(v)}</span></a></li>`).join('');
-  $('#plList').innerHTML = PLANGS.map(n => { const hit = findSnippet(n); return hit ? `<li><button type="button" data-pl="${esc(n)}">${esc(n)}</button></li>` : `<li><span>${esc(n)}</span></li>`; }).join('');
-  renderCode();
+  $('#plList').innerHTML = PLANGS.filter(findSnippet).map(n => `<li><button type="button" data-pl="${esc(n)}">${esc(n)}</button></li>`).join('');
+  renderCode(false);
+  observeReveal();
+  markNav();
 }
 
-const ALIAS = {"Java":"Spring Boot","C#":"ASP.NET Core","Python":"FastAPI","TypeScript":"Angular","JavaScript":"React","SQL":"Oracle SQL"};
+function renderStack(){
+  const t = D[lang], q = skillQ.trim().toLowerCase();
+  let hits = 0;
+  $('#stackBody').innerHTML = t.stack.map(([h,v]) => {
+    const items = v.split(/,\s*(?![^()]*\))/);
+    let any = false;
+    const lis = items.map(s => { const m = q && s.toLowerCase().includes(q); if (m) { any = true; hits++; } return `<li${m?' class="hit"':''}>${esc(s)}</li>`; }).join('');
+    return `<div${q && !any ? ' class="dim"' : ''}><h3>${esc(h)}</h3><ul>${lis}</ul></div>`;
+  }).join('');
+  $('#skillCount').textContent = q ? t.matches(hits) : '';
+}
+
 function findSnippet(name){
   const target = ALIAS[name] || name;
   for (const g of Object.keys(SNIPPETS)) { const i = SNIPPETS[g].findIndex(s => s.label === target); if (i > -1) return [g, i]; }
   return null;
 }
 
-function renderCode(){
-  const t = D[lang];
-  $('#groups').innerHTML = Object.keys(SNIPPETS).map(g => `<button role="tab" type="button" data-g="${g}" aria-selected="${g===group}">${t.codeGroups[g]}</button>`).join('');
-  const gsel = $('#groups [aria-selected="true"]'); const gbar = $('#groups');
+function renderCode(anim = true){
+  const t = D[lang], groups = Object.keys(SNIPPETS);
+  $('#groups').innerHTML = groups.map(g => `<button role="tab" type="button" id="tab-${g}" data-g="${g}" aria-controls="codePanel" aria-selected="${g===group}" tabindex="${g===group?0:-1}">${t.codeGroups[g]}</button>`).join('');
+  $('#codePanel').setAttribute('aria-labelledby', 'tab-' + group);
+  const gsel = $('#groups [aria-selected="true"]'), gbar = $('#groups');
   if (gsel && (gsel.offsetLeft < gbar.scrollLeft || gsel.offsetLeft + gsel.offsetWidth > gbar.scrollLeft + gbar.clientWidth)) gbar.scrollLeft = gsel.offsetLeft - 16;
-  const list = SNIPPETS[group];
-  $('#variants').innerHTML = list.map((s,i) => `<button type="button" data-v="${i}" aria-pressed="${i===variant}">${s.label}</button>`).join('');
+  const list = SNIPPETS[group], s = list[variant];
+  $('#variants').innerHTML = list.map((x,i) => `<button type="button" data-v="${i}" aria-pressed="${i===variant}">${x.label}</button>`).join('');
+  $('#fileName').textContent = s.file;
   const out = $('#codeOut'), pre = out.parentElement;
-  out.innerHTML = hl(list[variant].code, list[variant].lang);
-  document.querySelectorAll('#plList [data-pl]').forEach(b => { const h = findSnippet(b.dataset.pl); const on = !!h && h[0] === group && h[1] === variant; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-  pre.classList.remove('swap'); void pre.offsetWidth; pre.classList.add('swap');
+  out.innerHTML = hl(s.code, s.lang);
+  $$('#plList [data-pl]').forEach(b => { const h = findSnippet(b.dataset.pl); const on = !!h && h[0] === group && h[1] === variant; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  if (anim) { pre.classList.remove('swap'); void pre.offsetWidth; pre.classList.add('swap'); }
 }
 
+/* ===================== EVENTS ===================== */
 $('#groups').addEventListener('click', e => { const b = e.target.closest('[data-g]'); if (!b) return; group = b.dataset.g; variant = 0; renderCode(); });
+$('#groups').addEventListener('keydown', e => {
+  const keys = Object.keys(SNIPPETS); let i = keys.indexOf(group);
+  if (e.key === 'ArrowRight') i = (i + 1) % keys.length; else if (e.key === 'ArrowLeft') i = (i - 1 + keys.length) % keys.length;
+  else if (e.key === 'Home') i = 0; else if (e.key === 'End') i = keys.length - 1; else return;
+  e.preventDefault(); group = keys[i]; variant = 0; renderCode(); $('#groups [aria-selected="true"]').focus();
+});
 $('#variants').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; variant = +b.dataset.v; renderCode(); });
-$('#plList').addEventListener('click', e => { const b = e.target.closest('[data-pl]'); if (!b) return; const hit = findSnippet(b.dataset.pl); if (!hit) return; [group, variant] = hit; renderCode(); document.querySelector('.code').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'}); });
-$('#langBtn').addEventListener('click', () => { lang = lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('lang', lang); } catch(e) {} render(); });
+$('#plList').addEventListener('click', e => { const b = e.target.closest('[data-pl]'); if (!b) return; const hit = findSnippet(b.dataset.pl); if (!hit) return; [group, variant] = hit; renderCode(); $('.code').scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'center'}); });
+$('#cpyCode').addEventListener('click', () => copyText(SNIPPETS[group][variant].code, D[lang].codeCopied));
+$('#copyMail').addEventListener('click', () => copyText(CONTACT.email, D[lang].copied));
+$('#skillQ').addEventListener('input', e => { skillQ = e.target.value; renderStack(); });
+$('#langBtn').addEventListener('click', () => {
+  lang = lang === 'en' ? 'es' : 'en';
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+  const u = new URL(location); u.searchParams.set('lang', lang); history.replaceState(null, '', u);
+  render();
+});
+
+/* mobile menu */
+const menuBtn = $('#menuBtn'), links = $('#links');
+function setMenu(open){ links.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open); }
+menuBtn.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+links.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+document.addEventListener('click', e => { if (!e.target.closest('.bar')) setMenu(false); });
 
 /* theme */
-function applyTheme(th){ if (th) document.documentElement.setAttribute('data-theme', th); }
-try { applyTheme(localStorage.getItem('theme')); } catch(e) {}
 $('#themeBtn').addEventListener('click', () => {
   const cur = document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const next = cur === 'dark' ? 'light' : 'dark';
-  applyTheme(next); try { localStorage.setItem('theme', next); } catch(e) {}
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch(e) {}
 });
 
 /* static links */
 $('#cvLink').href = CONTACT.cv;
 $('#fGit').href = CONTACT.github; $('#fIn').href = CONTACT.linkedin; $('#fWa').href = CONTACT.whatsapp;
 
-/* active nav link */
-const io = new IntersectionObserver(es => es.forEach(en => {
-  if (en.isIntersecting) document.querySelectorAll('#links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#'+en.target.id));
-}), {rootMargin:'-40% 0px -55% 0px'});
-SECTIONS.forEach(([id]) => io.observe(document.getElementById(id)));
+/* active nav link, reading progress, back to top */
+let navCur = '';
+const navIO = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { navCur = en.target.id; markNav(); } }), {rootMargin:'-40% 0px -55% 0px'});
+SECTIONS.forEach(id => navIO.observe(document.getElementById(id)));
+function markNav(){ $$('#links a').forEach(a => { const on = a.getAttribute('href') === '#' + navCur; a.classList.toggle('on', on); on ? a.setAttribute('aria-current','true') : a.removeAttribute('aria-current'); }); }
+const prog = $('#prog'), toTop = $('#toTop');
+addEventListener('scroll', () => {
+  const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? h.scrollTop / max * 100 : 0) + '%';
+  toTop.classList.toggle('show', h.scrollTop > 900);
+}, {passive:true});
+toTop.addEventListener('click', () => scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}));
 
-/* certificate viewer: renders the PDF on the page with PDF.js */
+/* reveal on scroll */
+const revIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revIO.unobserve(en.target); } }), {rootMargin:'0px 0px -8% 0px'}) : null;
+function observeReveal(){ $$('.rv:not(.in)').forEach(el => revIO ? revIO.observe(el) : el.classList.add('in')); }
+
+/* ===================== CERTIFICATE VIEWER (PDF.js) ===================== */
 const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
 let pdfjsReady = null, certToken = 0;
 function loadPdfJs(){
@@ -648,6 +1138,7 @@ const dlg = $('#certDlg'), certBody = $('#certBody');
 async function openCert(file, name){
   const C = D[lang].cert, token = ++certToken;
   $('#certDlgTitle').textContent = name;
+  $('#certOpen').textContent = C.open; $('#certOpen').href = file;
   $('#certClose').setAttribute('aria-label', C.close);
   certBody.innerHTML = `<p class="dlg-msg">${C.loading}</p>`;
   dlg.showModal(); document.body.style.overflow = 'hidden';
@@ -656,7 +1147,7 @@ async function openCert(file, name){
     const pdf = await lib.getDocument(file).promise;
     if (token !== certToken) return;
     certBody.innerHTML = '';
-    const width = certBody.clientWidth - 36 > 0 ? Math.min(certBody.clientWidth - 20, 880) : 600;
+    const width = Math.min(Math.max(certBody.clientWidth - 20, 280), 880);
     const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i);
@@ -665,7 +1156,7 @@ async function openCert(file, name){
       const vp = page.getViewport({scale:(width / base.width) * dpr});
       const cv = document.createElement('canvas');
       cv.width = vp.width; cv.height = vp.height;
-      cv.setAttribute('role','img'); cv.setAttribute('aria-label', name + (pdf.numPages > 1 ? ' (' + i + '/' + pdf.numPages + ')' : ''));
+      cv.setAttribute('role','img'); cv.setAttribute('aria-label', name + (pdf.numPages > 1 ? ` (${i}/${pdf.numPages})` : ''));
       certBody.appendChild(cv);
       await page.render({canvasContext: cv.getContext('2d'), viewport: vp}).promise;
     }
@@ -683,11 +1174,11 @@ $('#certList').addEventListener('click', e => {
   e.preventDefault(); openCert(a.dataset.file, a.dataset.name);
 });
 
-/* form */
+/* ===================== CONTACT FORM ===================== */
 const form = $('#cform'), status = $('#status'), fileIn = $('#fileIn');
 if (new URLSearchParams(location.search).get('sent') === '1') {
   status.className = 'status ok'; status.textContent = D[lang].form.sent;
-  history.replaceState(null, '', location.pathname + '#contact');
+  const u = new URL(location); u.searchParams.delete('sent'); history.replaceState(null, '', u.pathname + u.search + '#contact');
 }
 fileIn.addEventListener('change', () => {
   const f = fileIn.files[0], box = $('#fileBox'), txt = $('#fileTxt'), F = D[lang].form;
@@ -698,11 +1189,19 @@ fileIn.addEventListener('change', () => {
   if (bad) { status.className = 'status err'; status.textContent = bad; fileIn.value = ''; txt.textContent = F.filePh; return; }
   box.classList.add('has'); txt.textContent = f.name + ' (' + (f.size/1048576).toFixed(1) + ' MB)';
 });
+form.querySelectorAll('[required]').forEach(el => el.addEventListener('input', () => el.removeAttribute('aria-invalid')));
 form.addEventListener('submit', e => {
   if (form._honey.value) { e.preventDefault(); return; }
-  if (!form.checkValidity()) { e.preventDefault(); form.reportValidity(); return; }
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    form.querySelectorAll('[required]').forEach(el => el.setAttribute('aria-invalid', !el.checkValidity()));
+    status.className = 'status err'; status.textContent = D[lang].form.invalid;
+    form.querySelector(':invalid')?.focus();
+    return;
+  }
   const b = $('#sendBtn'); b.disabled = true; b.textContent = D[lang].form.sending;
 });
+addEventListener('pageshow', () => { const b = $('#sendBtn'); b.disabled = false; b.textContent = D[lang].form.send; });
 
 render();
 </script>
