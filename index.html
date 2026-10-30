@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Issam Serbout — Full-Stack & Database Engineer</title>
-<meta name="description" content="Issam Serbout, full-stack engineer in Java/Spring Boot, C#/ASP.NET Core, PHP/Laravel and Python, with Angular, React and Vue. Oracle-certified database engineer with AI and data experience. Tangier, open to remote and relocation.">
+<title>Issam Serbout — Full-Stack, Database & AI Engineer</title>
+<meta name="description" content="Issam Serbout, full-stack engineer in Java/Spring Boot, C#/ASP.NET Core, PHP/Laravel and Python, with Angular, React and Vue. Oracle-certified database engineer with AI and data experience. Tangier, open to remote work and willing to relocate anywhere.">
 <meta name="author" content="Issam Serbout">
 <meta name="theme-color" content="#0A66C2">
 <link rel="canonical" href="https://issamserbout.github.io/">
 <link rel="alternate" hreflang="en" href="https://issamserbout.github.io/?lang=en">
 <link rel="alternate" hreflang="es" href="https://issamserbout.github.io/?lang=es">
-<meta property="og:title" content="Issam Serbout — Full-Stack & Database Engineer">
+<meta property="og:title" content="Issam Serbout — Full-Stack, Database & AI Engineer">
 <meta property="og:description" content="Java, .NET, PHP and Python on the back end. Angular, React, Vue on the front end. Oracle, SQL Server and PostgreSQL in production. Open to remote and relocation.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://issamserbout.github.io/">
@@ -76,6 +76,7 @@ a{color:inherit}img{display:block;max-width:100%}button{font-family:inherit}
 .verified{width:22px;height:22px;color:var(--acc)}
 .headline{color:var(--ink);font-size:17px;margin-top:4px}
 .meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:14.5px;color:var(--mut)}
+.meta .reloc{color:var(--ok);font-weight:700}
 .meta a{color:var(--acc-text);font-weight:700;text-decoration:none}
 .meta a:hover{text-decoration:underline}
 .open{display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:var(--ok-bg);color:var(--ok);font-weight:700;font-size:13.5px;padding:5px 12px;border-radius:99px}
@@ -290,7 +291,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--acc-text)}
       <div>
         <h1>Issam Serbout <svg class="verified" viewBox="0 0 24 24" fill="currentColor" aria-label="Oracle certified"><path d="M12 1.5 14.6 4l3.6-.4.9 3.5 3.2 1.8-1.4 3.3 1.4 3.3-3.2 1.8-.9 3.5-3.6-.4L12 22.5 9.4 20l-3.6.4-.9-3.5-3.2-1.8L3.1 12 1.7 8.7l3.2-1.8.9-3.5 3.6.4z"/><path d="m8 12.2 2.6 2.6L16.2 9" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></h1>
         <p class="headline" id="headline"></p>
-        <div class="meta"><span id="metaLoc"></span><span>·</span><a href="#contact" id="metaContact"></a><span>·</span><span id="metaConn"></span></div>
+        <div class="meta"><span id="metaLoc"></span><span>·</span><span id="metaReloc" class="reloc"></span><span>·</span><a href="#contact" id="metaContact"></a><span>·</span><span id="metaConn"></span></div>
         <span class="open" data-t="avail"></span>
       </div>
       <div class="acts">
@@ -920,11 +921,11 @@ function hl(code, lang){
 
 
 const X = {
-  en:{headline:'Full-Stack & Database Engineer · Java · .NET · PHP · Python', contactInfo:'Contact info', conn:'Open to work', highlights:'Highlights',
-      openTo:'Open to', openList:['Remote','Spain','Netherlands','Morocco','Full-stack','Back-end','Database','Data'],
+  en:{headline:'Full-Stack & Database Engineer · Java · .NET · PHP · Python · AI', reloc:'Willing to relocate anywhere', contactInfo:'Contact info', conn:'Open to work', highlights:'Highlights',
+      openTo:'Open to', openList:['Anywhere','Remote','Spain','Netherlands','Morocco','Full-stack','Back-end','Database','AI & Data'],
       more:'…see more', less:'see less', positions:n => n + ' positions', viewCode:'View code →', present:'Current'},
-  es:{headline:'Ingeniero Full-Stack y de Bases de Datos · Java · .NET · PHP · Python', contactInfo:'Información de contacto', conn:'Disponible', highlights:'Datos clave',
-      openTo:'Disponible para', openList:['Remoto','España','Países Bajos','Marruecos','Full-stack','Back-end','Bases de datos','Datos'],
+  es:{headline:'Ingeniero Full-Stack y de Bases de Datos · Java · .NET · PHP · Python · IA', reloc:'Dispuesto a trasladarme a cualquier lugar', contactInfo:'Información de contacto', conn:'Disponible', highlights:'Datos clave',
+      openTo:'Disponible para', openList:['Cualquier lugar','Remoto','España','Países Bajos','Marruecos','Full-stack','Back-end','Bases de datos','IA y datos'],
       more:'…ver más', less:'ver menos', positions:n => n + ' puestos', viewCode:'Ver código →', present:'Actual'}
 };
 const LOGO = {'DLS':'#0A66C2','KESSEL':'#7C3AED','Chantiers':'#0F766E','Enersoft':'#E08A00','TE':'#E11D48'};
@@ -970,6 +971,7 @@ function render(){
   /* header */
   $('#headline').textContent = x.headline;
   $('#metaLoc').textContent = t.location;
+  $('#metaReloc').textContent = '✈ ' + x.reloc;
   $('#metaContact').textContent = x.contactInfo;
   $('#metaConn').textContent = t.work[0].co.split(',')[0];
   $('#tabs').innerHTML = SECTIONS.map(id => `<a href="#${id}">${t.nav[id]}</a>`).join('');
